@@ -69,7 +69,7 @@
       <% cars.forEach((car)=>{ %>
         <div class="col-md-3 col-sm-6">
           <div class="car-card">
-            <img height="100" class="car-image" src="data:image/png;base64,<%= car.thumbnail %>" alt="Car 1 Image">
+            <img height="100" class="car-image" src="<%= car.thumbnail %>" alt="Car 1 Image">
             <div>
               <p class="car-name">
                 <%= car.name %>

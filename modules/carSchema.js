@@ -6,7 +6,7 @@ const carSchema = new mongoose.Schema({
   transmission: { type: String, enum: ['Manual', 'Automatic'], required: true },
   seats: { type: Number, required: true },
   fuel: { type: String, enum: ['Petrol', 'Diesel', 'Electric', 'Hybrid'], required: true },
-  image: { type: String, required: true }, // Store the Base64 string of the image
+  image: { type: String, required: true },
   thumbnail: { type: String},
   pricePerDay: {type: Number},
   path: String,

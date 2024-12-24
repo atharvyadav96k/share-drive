@@ -23,6 +23,11 @@ const s3 = new S3Client({
     region: bucketRegion
 })
 
+const ensureDirectoryExists = (dirPath) => {
+    if (!fs.existsSync(dirPath)) {
+        fs.mkdirSync(dirPath, { recursive: true });
+    }
+};
 // saving image to cloud bucket
 async function saveImageToBucket(file, resizedImage) {
     try {
@@ -70,15 +75,10 @@ exports.storeCarDetails = async (req, res) => {
             fuel,
             pricePerDay,
             airConditioning,
-            // childSeat,
-            // gps,
             luggage,
             music,
             seatBelt,
-            // sleepingBed,
-            // water,
             bluetooth,
-            // onboardComputer,
             audioInput,
             longTermTrips,
             carKit,
@@ -87,24 +87,18 @@ exports.storeCarDetails = async (req, res) => {
             frontSensors,
             backCamera,
         } = req.body;
-        // console.log("airConditioning", airConditioning);
 
         const imageBuffer = req.file.buffer;
-        const base64Image = imageBuffer.toString('base64');
         const thumbnailBuffer = await reduceImageSize(imageBuffer);
-        const base64Thumbnail = thumbnailBuffer.toString('base64');
-
-        const storeImage = await saveImageToBucket(req.file, thumbnailBuffer);
+        
+        // const storeImage = await saveImageToBucket(req.file, thumbnailBuffer);
         const car = new Car({
             name,
             mileage,
             transmission,
             seats,
             fuel,
-            path: storeImage,
             pricePerDay,
-            image: base64Image,
-            thumbnail: base64Thumbnail,
             features: {
                 airConditioning: airConditioning === 'on',
                 frontSensors: frontSensors === 'on',
@@ -112,10 +106,7 @@ exports.storeCarDetails = async (req, res) => {
                 luggage: luggage === 'on',
                 music: music === 'on',
                 seatBelt: seatBelt === 'on',
-                // sleepingBed: sleepingBed === 'on',
-                // water: water === 'on',
                 bluetooth: bluetooth === 'on',
-                // onboardComputer: onboardComputer === 'on',
                 audioInput: audioInput === 'on',
                 longTermTrips: longTermTrips === 'on',
                 carKit: carKit === 'on',
@@ -123,6 +114,31 @@ exports.storeCarDetails = async (req, res) => {
                 climateControl: climateControl === 'on',
             },
         });
+
+        if (req.file) {
+            // Ensure uploads directory exists
+            const uploadDir = path.join(__dirname, '../public/uploads');
+            ensureDirectoryExists(uploadDir);
+
+            // Define file paths for image and thumbnail
+            const imageName = `image-${Date.now()}-${req.file.originalname}`;
+            const imagePath = path.join(uploadDir, imageName);
+
+            const thumbnailName = `thumb-${Date.now()}-${req.file.originalname}`;
+            const thumbnailPath = path.join(uploadDir, thumbnailName);
+
+            // Save original image
+            fs.writeFileSync(imagePath, req.file.buffer);
+
+            // Create and save thumbnail
+            const thumbnailBuffer = await reduceImageSize(req.file.buffer);
+            fs.writeFileSync(thumbnailPath, thumbnailBuffer);
+
+            // Update car with file paths
+            car.image = `/uploads/${imageName}`;
+            car.thumbnail = `/uploads/${thumbnailName}`;
+            car.path = `/uploads/${thumbnailName}`
+        }
 
         await car.save();
         res.redirect(`/admin/cars`);
@@ -158,17 +174,7 @@ exports.updateCarDetails = async (req, res) => {
 
     try {
         let car = await Car.findById(id);
-        if (!car) {
-            return res.status(404).json({ message: "Car not found" });
-        }
-        if (req.file) {
-            const imageBuffer = req.file.buffer;
-            const base64Image = imageBuffer.toString('base64');
-            const thumbnailBuffer = await reduceImageSize(imageBuffer);
-            const base64Thumbnail = thumbnailBuffer.toString('base64');
-            car.image = base64Image;
-            car.thumbnail = base64Thumbnail;
-        }
+        
         car.name = name || car.name;
         car.mileage = mileage || car.mileage;
         car.transmission = transmission || car.transmission;
@@ -189,6 +195,34 @@ exports.updateCarDetails = async (req, res) => {
             frontSensors: frontSensors == 'on' ?? car.features.frontSensors,
             backCamera: backCamera == 'on' ?? car.features.backCamera,
         };
+        if (!car) {
+            return res.status(404).json({ message: "Car not found" });
+        }
+       if (req.file) {
+            // Ensure uploads directory exists
+            const uploadDir = path.join(__dirname, '../public/uploads');
+            ensureDirectoryExists(uploadDir);
+
+            // Define file paths for image and thumbnail
+            const imageName = `image-${Date.now()}-${req.file.originalname}`;
+            const imagePath = path.join(uploadDir, imageName);
+
+            const thumbnailName = `thumb-${Date.now()}-${req.file.originalname}`;
+            const thumbnailPath = path.join(uploadDir, thumbnailName);
+    
+
+            // Save original image
+            fs.writeFileSync(imagePath, req.file.buffer);
+
+            // Create and save thumbnail
+            const thumbnailBuffer = await reduceImageSize(req.file.buffer);
+            fs.writeFileSync(thumbnailPath, thumbnailBuffer);
+
+            // Update car with file paths
+            car.image = `/uploads/${imageName}`;
+            car.thumbnail = `/uploads/${thumbnailName}`;
+            car.path = `/uploads/${thumbnailName}`;
+        }
         await car.save();
 
         res.redirect(`/admin/cars`)

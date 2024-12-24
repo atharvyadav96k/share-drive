@@ -209,7 +209,7 @@
       <div class="horizontal">
         <% cars.forEach((car) => { %>
           <div class="card" style="min-width: 250px; width: 18rem; margin-right: 10px; border-radius: 10px; overflow: hidden; height: 240px;">
-            <img src="data:image/jpeg;base64,<%= car.thumbnail %>" class="card-img-top" alt="..." style="height: 150px; object-fit: contain;">
+            <img src="<%= car.thumbnail %>" class="card-img-top" alt="..." style="height: 150px; object-fit: contain;">
             <div class="card-body d-flex" style="justify-content: space-between; color: #2b2f32; font-weight: 600;">
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#CCC806" width="16" height="16" fill="currentColor" class="bi bi-car-front" viewBox="0 0 16 16">
