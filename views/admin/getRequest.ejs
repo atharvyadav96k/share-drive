@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShareDrive request car </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS for styling -->
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+
+    .card-header {
+      color: white;
+    }
+
+    .card-body {
+      font-size: 1.1rem;
+    }
+
+    .info-row {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body style="margin-top: -40px;">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/admin">Admin Panel</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/admin">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/requests">Requests</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/uploadCar">New Car</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin/cars">Cars</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <div class="container">
+    <h2 class="text-center mb-4">Car Details - Multiple Users</h2>
+
+    <div class="row">
+      <!-- Loop through users array and display each user's details -->
+      <% requests.forEach(req=> { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header text-center" style="background-color: <%= req.status === 'pending' ? '#ffcd39' : req.status === 'approve' ? '#13653f' : '#b02a37' %>;">
+              <h5>
+                <%= req.car.name %>
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="info-row"><strong>Name:</strong>
+                <%= req.name %>
+              </div>
+              <div class="info-row"><strong>Email:</strong>
+                <%= req.email %>
+              </div>
+              <div class="info-row"><strong>Phone:</strong>
+                <%= req.phoneNo %>
+              </div>
+              <div class="info-row"><strong>Date:</strong>
+                <%= new Date(req.Date).toLocaleDateString('en-IN') %>
+              </div>
+              <div class="info-row"><strong>Time:</strong>
+                <%= new Date(req.Date).toLocaleTimeString('en-IN') %>
+              </div>
+              <div class="info-row"><strong>Price:</strong>
+                <%= req.car.pricePerDay %>
+              </div>
+              <div class="info-row" style="justify-content: space-between;">
+                <a class="btn m-2 btn-danger" href="/admin/cancel-car-request/<%= req._id %>">Cancel</a>
+                <a class="btn m-2 btn-warning" href="/admin/pending-car-request/<%= req._id %>">Pending</a>
+                <a class="btn m-2 btn-success" href="/admin/verify-car-request/<%= req._id %>">Approve</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <% }) %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

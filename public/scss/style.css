@@ -1,0 +1,26 @@
+@keyframes alertAnimation {
+    from{
+      opacity: 1;
+      transform: translate(-50%, -100px);
+    }
+    20%{
+      transform: translate(-50%, 50px);
+    }
+    80%{
+      opacity: 1;
+      transform: translate(-50%, 50px);
+    }
+    to{
+      transform: translate(-50%, 50px);
+      opacity: 0;
+      display: none;
+    }
+  }
+  .alertAni{
+    animation: alertAnimation;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    width: 100%;
+    max-width: 300px;
+    font-size: 12px;
+  }

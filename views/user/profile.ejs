@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ShareDrive Profile <%= name %> </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    
+    <nav style="background-color: white !important;" class="navbar navbar-expand-lg navbar-dark ftco_navbar  ftco-navbar-dark" id="ftco-navbar">
+        <div class="container">
+          <a class="navbar-brand" href="/">
+            <img src="/images/logo.png" alt="CarBook Logo" style="max-height: 40px;">
+          <strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;"><span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span></strong>
+          </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="oi oi-menu"></span> Menu
+            </button>
+
+            <div class="collapse navbar-collapse" id="ftco-nav">
+              <style>
+                .nav-link{
+                  color: #000000;
+                }
+              </style>
+            </div>
+        </div>
+    </nav>
+    <!-- User Profile Section -->
+    <section>
+        <form action="/api/v1/userAuth/update-profile">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-4">
+                        <img style="width: 200px; height: 200px;" src="<%= imageUrl ? imageUrl : 'https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg' %>" alt="User Profile Image" class="img-fluid rounded-circle">
+                    </div>
+                    <div class="col-md-8">
+                        <h2 id="userName">
+                            <!-- Editable Name -->
+                            <input type="text" name="name" value="<%= name %>" class="form-control">
+                        </h2>
+                        <p><strong>Email:</strong>
+                            <!-- Editable Email -->
+                            <input type="email" value="<%= email %>" class="form-control" disabled>
+                        </p>
+                        <p><strong>Phone:</strong>
+                            <!-- Editable Phone -->
+                            <input type="tel" name="phoneNo" value="<%= phoneNo %>" class="form-control">
+                        </p>
+                        <p>
+                            <% if (verified) { %>
+                                <p>Verified User</p>
+                                <% } else { %>
+                                    <a href="/api/v1/userAuth/resend-verification-link"><strong>Verify Now</strong></a>
+                                    <% } %>
+                        </p>
+                        <!-- Edit Profile Button -->
+                        <button class="btn btn-primary" type="submit">Save Changes</button>
+                        <a class="ml-4 text-danger" href="/api/v1/userAuth/logout">logout</a>
+                        <br><br>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <!-- Request Car Section -->
+    <section class="ftco-section bg-light" style="background-color: #f9f9f9; padding: 60px 0;">
+        <h1 style="text-align: center; font-size: 36px; margin-bottom: 40px;">Your Requested Cars</h1>
+        <div class="container">
+            <div class="row">
+                <% cars.forEach((car) => { %>
+                    <div class="col-md-4 col-12" style="margin-bottom: 30px;">
+                      <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
+
+                            <div class="img rounded d-flex align-items-end" style="background-image: url('data:image/png;base64,<%= car.car.thumbnail %>'); background-position: center; background-size: contain; height: 200px; border-radius: 10px;">
+                            </div>
+                            <div class="text" style="padding: 10px;">
+                                <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
+                                    <a href="/car/details/<%= car.car._id %>#car" style="color: #333;"> <%= car.car.name %> </a>
+                                </h2>
+                                <div class="d-flex mb-3" style="margin-top: 10px;">
+                                    <span class="cat" style="font-size: 14px; color: #777;"><%= new Date(car.Date).toLocaleDateString('en-IN') %> <br><%= new Date(car.Date).toLocaleTimeString('en-IN') %></span>
+                                    <p class="price ml-auto" style="font-size: 18px; font-weight: bold;">₹<%= car.car.pricePerDay %> <span>/day</span><br><span>status: </span><span style="color: black;background-color: <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>"><%= car.status %></span></p>
+                                </div>
+                                <p class="d-flex mb-0 d-block">
+                                    <a href="/car/request/<%= car.car._id %>#focus" class="btn btn-primary py-2 mr-1" style="background-color: #f96d00; color: white; border-radius: 5px; text-transform: uppercase;">Request Again</a>
+                                    <a href="/car/details/<%= car.car._id %>#car" class="btn btn-secondary py-2 ml-1" style="background-color: #333; color: white; border-radius: 5px; text-transform: uppercase;">Details</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>        
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="text-white pt-5 pb-4" style="background-color: #212529;">
+      <div class="container text-center text-md-start">
+        <div class="row text-center text-md-start">
+        <!-- About Us -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">About Us</h5>
+          <p>
+          Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quick Links</h5>
+          <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+        </div>
+    
+        <!-- Contact Information -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
+          <p><i class="fas fa-home mr-3"></i>Subhash Nagar, Chembur, Mumbai- 400071</p>
+          <p><i class="fas fa-envelope mr-3"></i>sharedrivee1@gmail.com</p>
+          <p><i class="fas fa-phone mr-3"></i> 9004988983</p>
+        </div>
+    
+        <!-- Social Media Links -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Follow Us</h5>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button">
+          <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button">
+          <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button">
+          <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button">
+          <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        </div>
+    
+        <!-- Horizontal Line -->
+        <hr class="mb-4" />
+    
+        <!-- Copyright -->
+        <div class="row d-flex justify-content-center">
+        <div class="col-md-7 col-lg-8">
+          <p>
+          © 2024 Atharv Yadav. All Rights Reserved.
+          <a href="https://developeraadesh.wordpress.com/" class="text-primary text-decoration-none"><strong>Privacy
+            Policy</strong></a>
+          </p>
+        </div>
+        </div>
+      </div>
+      </footer>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.easing.1.3.js"></script>
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/jquery.stellar.min.js"></script>
+    <script src="/js/owl.carousel.min.js"></script>
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <script src="/js/aos.js"></script>
+    <script src="/js/jquery.animateNumber.min.js"></script>
+    <script src="/js/bootstrap-datepicker.js"></script>
+    <script src="/js/scrollax.min.js"></script>
+    <script src="/js/main.js"></script>
+
+</body>
+
+</html>

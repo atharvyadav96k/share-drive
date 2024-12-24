@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Share Drive <%= car.name %>
+	</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+	<meta property="og:image" content="<%= car.path %>">
+	<meta property="og:title" content="Drive a <%= car.name %> with Share Drive">
+	<meta property="og:description"
+		content="Rent a <%= car.name %> for just ₹<%= car.pricePerDay %>/day with Share Drive. Book now!">
+	<meta property="og:type" content="website">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="/css/animate.css">
+	<link rel="stylesheet" href="/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="/css/magnific-popup.css">
+	<link rel="stylesheet" href="/css/aos.css">
+	<link rel="stylesheet" href="/css/ionicons.min.css">
+	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="/css/jquery.timepicker.css">
+	<link rel="stylesheet" href="/css/flaticon.css">
+	<link rel="stylesheet" href="/css/icomoon.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+
+
+<body>
+	<div class="container" style="position: sticky; top: 0px; z-index: 100;background-color: white;">
+		<nav class="navbar navbar-expand-lg bg-body-tertiary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">
+					<img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
+					<strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;"><span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span></strong>
+
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+					aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link" aria-current="page" href="/about">About</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/services">Services</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/pricing">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="/car">Cars</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<!-- END nav -->
+	<section class="ftco-section ftco-car-details" style="margin-top: -50px;">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="car-details">
+						<div class="img rounded"
+							style="background-image: url('data:image/png;base64,<%= car.image %>'); background-size: contain; background-position: center; height: 300px;">
+						</div>
+						<div class="text text-center mt-3">
+							<h2>
+								<%= car.name %>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services">
+						<div class="media-body py-md-4">
+							<div class="d-flex mb-3 align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center"><span
+										class="flaticon-dashboard"></span></div>
+								<div class="text">
+									<h3 class="heading mb-0 pl-3">
+										Mileage
+										<span>
+											<%= car.mileage %>
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services">
+						<div class="media-body py-md-4">
+							<div class="d-flex mb-3 align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center"><span
+										class="flaticon-pistons"></span></div>
+								<div class="text">
+									<h3 class="heading mb-0 pl-3">
+										Transmission
+										<span>
+											<%= car.transmission %>
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services">
+						<div class="media-body py-md-4">
+							<div class="d-flex mb-3 align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center"><span
+										class="flaticon-car-seat"></span></div>
+								<div class="text">
+									<h3 class="heading mb-0 pl-3">
+										Seats
+										<span>
+											<%= car.seats %> Adults
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 services">
+						<div class="media-body py-md-4">
+							<div class="d-flex mb-3 align-items-center">
+								<div class="icon d-flex align-items-center justify-content-center"><span
+										class="flaticon-diesel"></span></div>
+								<div class="text">
+									<h3 class="heading mb-0 pl-3">
+										Fuel
+										<span>
+											<%= car.fuel %>
+										</span>
+									</h3>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top: -50px;">
+				<div class="col-md-12 pills">
+					<div class="bd-example bd-example-tabs">
+						<div class="d-flex justify-content-center">
+							<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active" id="pills-description-tab" data-toggle="pill"
+										href="#pills-description" role="tab" aria-controls="pills-description"
+										aria-expanded="true">Features</a>
+								</li>
+
+							</ul>
+						</div>
+						<div class="tab-content" id="pills-tabContent">
+							<div class="tab-pane fade show active" id="pills-description" role="tabpanel"
+								aria-labelledby="pills-description-tab">
+								<div class="row">
+									<!-- First Column -->
+									<div class="col-md-4">
+										<ul class="features">
+											<li class="<%= car.features.airConditioning ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.airConditioning ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Air Conditioning
+											</li>
+											<li class="<%= car.features.frontSensors ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.frontSensors ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Front Back Sensors
+											</li>
+											<li class="<%= car.features.backCamera ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.backCamera ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Back Camera
+											</li>
+											<li class="<%= car.features.luggage ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.luggage ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Luggage
+											</li>
+											<li class="<%= car.features.music ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.music ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Music
+											</li>
+										</ul>
+									</div>
+									<!-- Second Column -->
+									<div class="col-md-4">
+										<ul class="features">
+											<li class="<%= car.features.seatBelt ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.seatBelt ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Seat Belt
+											</li>
+											<li class="<%= car.features.remoteCentralLocking ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.remoteCentralLocking ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Remote Central Locking
+											</li>
+											<li class="<%= car.features.climateControl ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.climateControl ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Climate Control
+											</li>
+											<li class="<%= car.features.bluetooth ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.bluetooth ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Bluetooth
+											</li>
+											<li class="<%= car.features.onboardComputer ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.onboardComputer ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Onboard Computer
+											</li>
+										</ul>
+									</div>
+									<!-- Third Column -->
+									<div class="col-md-4">
+										<ul class="features">
+											<li class="<%= car.features.audioInput ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.audioInput ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Audio Input
+											</li>
+											<li class="<%= car.features.longTermTrips ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.longTermTrips ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Long Term Trips
+											</li>
+											<li class="<%= car.features.carKit ? 'check' : 'remove' %>">
+												<span
+													class="<%= car.features.carKit ? 'ion-ios-checkmark' : 'ion-ios-close' %>"></span>
+												Car Kit
+											</li>
+
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer class="text-white pt-5 pb-4" style="background-color: #212529;">
+		<div class="container text-center text-md-start">
+		  <div class="row text-center text-md-start">
+			<!-- About Us -->
+			<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+			  <h5 class="text-uppercase mb-4 font-weight-bold text-primary">About Us</h5>
+			  <p>
+				Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.
+			  </p>
+			</div>
+	
+			<!-- Quick Links -->
+			<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+			  <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quick Links</h5>
+			  <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+			  <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+			  <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
+			  <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+			</div>
+	
+			<!-- Contact Information -->
+			<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+			  <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
+			  <p><i class="fas fa-home mr-3"></i>Subhash Nagar, Chembur, Mumbai- 400071</p>
+			  <p><i class="fas fa-envelope mr-3"></i>sharedrivee1@gmail.com</p>
+			  <p><i class="fas fa-phone mr-3"></i> 9004988983</p>
+			</div>
+	
+			<!-- Social Media Links -->
+			<div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+			  <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Follow Us</h5>
+			  <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button">
+				<i class="fab fa-facebook-f"></i>
+			  </a>
+			  <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button">
+				<i class="fab fa-twitter"></i>
+			  </a>
+			  <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button">
+				<i class="fab fa-google"></i>
+			  </a>
+			  <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button">
+				<i class="fab fa-instagram"></i>
+			  </a>
+			</div>
+		  </div>
+	
+		  <!-- Horizontal Line -->
+		  <hr class="mb-4" />
+	
+		  <!-- Copyright -->
+		  <div class="row d-flex justify-content-center">
+			<div class="col-md-7 col-lg-8">
+			  <p>
+				© 2024 Atharv Yadav. All Rights Reserved.
+				<a href="https://developeraadesh.wordpress.com/" class="text-primary text-decoration-none"><strong>Privacy
+					Policy</strong></a>
+			  </p>
+			</div>
+		  </div>
+		</div>
+	  </footer>
+	
+	<script src="/js/jquery.min.js"></script>
+	<script src="/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/js/popper.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery.easing.1.3.js"></script>
+	<script src="/js/jquery.waypoints.min.js"></script>
+	<script src="/js/jquery.stellar.min.js"></script>
+	<script src="/js/owl.carousel.min.js"></script>
+	<script src="/js/jquery.magnific-popup.min.js"></script>
+	<script src="/js/aos.js"></script>
+	<script src="/js/jquery.animateNumber.min.js"></script>
+	<script src="/js/bootstrap-datepicker.js"></script>
+	<script src="/js/jquery.timepicker.min.js"></script>
+	<script src="/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="/js/google-map.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+
+</html>

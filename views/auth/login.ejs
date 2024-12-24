@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>ShareDrive Login</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+  <link rel="stylesheet" href="css/animate.css">
+
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/ionicons.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="css/jquery.timepicker.css">
+
+
+  <link rel="stylesheet" href="css/flaticon.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <div class="container" style="position: sticky; top: 0px; z-index: 100; background-color: white;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
+          <strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;"><span
+              style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span></strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-semibold" aria-current="page" href="/about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-semibold" href="/services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-semibold" href="/pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-primary fw-semibold" href="/car">Cars</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <!-- END nav -->
+  <section class="ftco-section ftco-no-pt bg-light mt-5 mb-0">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-12">
+          <div class="row no-gutters d-flex align-item-center justify-content-center">
+            <div class="col-md-4 d-flex align-items-center justify-content-center">
+              <form id="form" class="m-1 request-form ftco-animate bg-primary row">
+                <h2>Login Here</h2>
+                <div class="form-group col-14">
+                  <label for="" class="label">Enter Gmail</label>
+                  <input type="text" name="email" required class="form-control" placeholder="example@example.com">
+                </div>
+                <div class="form-group ml-2">
+                  <label for="" class="label">Enter Password</label>
+                  <div class="password-container" style="position: relative;">
+                    <input type="password" name="password" required class="form-control" id="password"
+                      placeholder="password">
+                    <button type="button" id="togglePassword"
+                      style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: none; border: none; cursor: pointer;">
+                      <img src="https://cdn-icons-png.flaticon.com/512/159/159604.png" alt="Show/Hide Icon"
+                        style="width: 20px; height: 20px;">
+                    </button>
+                  </div>
+                  <a href="/forget-password"
+                    style="margin-top: 10px;display: block;color: white; text-align: right; font-size: 12px;">forget
+                    password</a>
+                </div>
+                <div class="form-group">
+                  <input type="submit" id="loginBtn" required value="Login" class="btn btn-secondary py-3 px-4">
+                </div>
+                <div class="form-group">
+                  <button type="button" id="google-sign-in"
+                    class="btn btn-light py-3 px-4 w-100 d-flex align-items-center justify-content-center">
+                    <img src="https://www.gstatic.com/images/icons/material/system/2x/google_gm_blue_24dp.png"
+                      alt="Google Logo" style="height: 20px; margin-right: 10px;">
+                    Sign in with Google
+                  </button>
+                </div>
+                <div class="form-group">
+                  <a href="register#register" style="display: block;color: white; text-align: right;">Don't have an
+                    account?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- disable buttons -->
+
+  <script>
+    const disableButton = () => {
+      document.getElementById('google-sign-in').disabled = true;
+      document.getElementById('loginBtn').disabled = true;
+    }
+    const enableButtons = () => {
+      document.getElementById('google-sign-in').disabled = false;
+      document.getElementById('loginBtn').disabled = false;
+    }
+  </script>
+  <!-- google auth -->
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyC4g3dAt3SieLErt_t_m9fI6P3bLnmxzw8",
+      authDomain: "share-drive-3ceb9.firebaseapp.com",
+      projectId: "share-drive-3ceb9",
+      storageBucket: "share-drive-3ceb9.firebasestorage.app",
+      messagingSenderId: "538148023009",
+      appId: "1:538148023009:web:9ecc29ef09bc785ac1a5a0",
+      measurementId: "G-32NVF6S68K"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const analytics = getAnalytics(app);
+
+    // Google Sign-In
+    document.getElementById('google-sign-in').addEventListener('click', () => {
+      const provider = new GoogleAuthProvider();
+      signInWithPopup(auth, provider)
+        .then((result) => {
+          const user = result.user;
+          console.log('User signed in:', user);
+          googleAuth(user.displayName, user.email, user.photoURL, user.uid);
+        })
+        .catch((error) => {
+          console.error('Error during Google sign-in:', error);
+          alert(error.message)
+        });
+    });
+    const googleAuth = async (name, email, photoUrl, uid) => {
+      try {
+        disableButton();
+        await axios.post('/api/v1/userAuth/google-auth', {
+          name,
+          email,
+          imageUrl: photoUrl,
+          uid,
+        });
+        location.reload();
+      } catch (error) {
+        enableButtons();
+        alert("failed to continue with google");
+        console.log(error.message);
+      }
+    }
+  </script>
+
+  <!-- login auth -->
+  <script>
+    const loginAuth = async (email, password) => {
+      try {
+        disableButton();
+        const res = await axios.post('/api/v1/userAuth/login', {
+          email, password
+        });
+        location.reload();
+      } catch (err) {
+        enableButtons();
+        console.log(err.response)
+        alert(err.response.data)
+      }
+    }
+    document.getElementById('form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const email = event.target.email.value;
+      const password = event.target.password.value;
+      console.log(event.target.email.value)
+      loginAuth(email, password);
+    })
+  </script>
+
+  <!-- show hide password -->
+  <script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const passwordField = document.querySelector("#password");
+
+    togglePassword.addEventListener("click", () => {
+      const type = passwordField.type === "password" ? "text" : "password";
+      passwordField.type = type;
+
+      // Update the toggle icon (optional)
+      togglePassword.querySelector("img").src =
+        type === "password"
+          ? "https://cdn-icons-png.flaticon.com/512/159/159604.png"
+          : "https://cdn-icons-png.flaticon.com/512/565/565655.png";
+
+    });
+  </script>
+
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+      <div class="row text-center text-md-start">
+        <!-- About Us -->
+        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">About Us</h5>
+          <p>
+            Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quick Links</h5>
+          <p><a href="#" class="text-white text-decoration-none">Home</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Services</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
+          <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
+          <p><i class="fas fa-home mr-3"></i>Subhash Nagar, Chembur, Mumbai- 400071</p>
+          <p><i class="fas fa-envelope mr-3"></i>sharedrivee1@gmail.com</p>
+          <p><i class="fas fa-phone mr-3"></i> 9004988983</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
+          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Follow Us</h5>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #3b5998;" role="button">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #55acee;" role="button">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #dd4b39;" role="button">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#" class="btn btn-primary btn-floating m-1" style="background-color: #ac2bac;" role="button">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Horizontal Line -->
+      <hr class="mb-4" />
+
+      <!-- Copyright -->
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-7 col-lg-8">
+          <p>
+            © 2024 Atharv Yadav. All Rights Reserved.
+            <a href="https://developeraadesh.wordpress.com/" class="text-primary text-decoration-none"><strong>Privacy
+                Policy</strong></a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+      <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+      <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+        stroke="#F96D00" />
+    </svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/bootstrap-datepicker.js"></script>
+  <script src="js/jquery.timepicker.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="js/google-map.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
