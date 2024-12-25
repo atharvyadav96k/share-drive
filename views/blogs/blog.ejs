@@ -2,214 +2,312 @@
 <html lang="en">
 
 <head>
-  <title>Explore Places - Blog</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <title>Explore Places - Blog</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f8f9fa;
-    }
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+        }
 
-    .hero-wrap {
-      background: url('https://source.unsplash.com/1600x900/?nature,travel') no-repeat center center/cover;
-      height: 60vh;
-      position: relative;
-    }
+        .hero-wrap {
+            background: url('https://source.unsplash.com/1600x900/?nature,travel') no-repeat center center/cover;
+            height: 60vh;
+            position: relative;
+        }
 
-    .hero-wrap .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-    }
+        .hero-wrap .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
 
-    .hero-wrap .content {
-      position: relative;
-      z-index: 2;
-      color: white;
-      text-align: center;
-      padding-top: 15%;
-    }
+        .hero-wrap .content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 15%;
+        }
 
-    .blog-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+        .blog-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .blog-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    }
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
 
-    .blog-img {
-      height: 200px;
-      object-fit: cover;
-    }
+        .blog-img {
+            height: 200px;
+            /* Set a fixed height */
+            width: 100%;
+            /* Set width to 100% to fill the card */
+            object-fit: cover;
+            /* Maintain aspect ratio while covering the area */
+        }
 
-    .read-more-btn {
-      color: #007bff;
-      text-decoration: none;
-      font-weight: 600;
-    }
+        .read-more-btn {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+        }
 
-    .read-more-btn:hover {
-      text-decoration: underline;
-    }
-  </style>
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Hero Section -->
-  <div class="hero-wrap"
-    style="background-image: url(https://cdn.outsideonline.com/wp-content/uploads/2017/02/21/on-road-off-road-cars-trucks-12_h.jpg);">
-    <div class="overlay"></div>
-    <div class="content">
-      <h1>Discover Amazing Places</h1>
-      <p>Explore the most stunning destinations across the globe.</p>
+    <!-- Hero Section -->
+    <div class="hero-wrap"
+        style="background-image: url(https://cdn.outsideonline.com/wp-content/uploads/2017/02/21/on-road-off-road-cars-trucks-12_h.jpg);">
+        <div class="overlay"></div>
+        <div class="content">
+            <h1>Discover Amazing Places</h1>
+            <p>Explore the most stunning destinations across the globe.</p>
+        </div>
     </div>
-  </div>
 
-  <!-- Blog Section -->
-  <section class="py-5">
-    <div class="container">
-      <div class="row mb-4">
-        <div class="col text-center">
-          <h2 class="fw-bold">Explore Our Blogs</h2>
-          <p>Curated stories of mesmerizing places, from breathtaking beaches to serene mountains.</p>
-        </div>
-      </div>
+    <!-- Blog Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-4">
+                <div class="col text-center">
+                    <h2 class="fw-bold">Explore Our Blogs</h2>
+                    <p>Curated stories of mesmerizing places, from breathtaking beaches to serene mountains.</p>
+                </div>
+            </div>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
-            src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0rd6-UsmLdaJF_4VzpaHQzIRVssfzIARswwu6UYJoq-9J0TOSa0ZJqMEYHpX3V3IS_qTg9_w6GZdqQy5o0_CuvSL57FtsfDPFIXMETNhzJkA0O8r2B5O9Jkl51u3XFs7-9yPMM-cCIG4/w1200-h630-p-k-no-nu/Ajanta+Painting+Padmapani+03.jpg"
-              class="card-img-top blog-img" alt="Tropical Beach">
-            <div class="card-body">
-              <h5 class="card-title">Ajanta and Ellora Caves Tourism</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">UNESCO heritage caves showcasing ancient sculptures, murals, and spiritual artistry, reflecting India's rich cultural history.</p>
-              <a href="/explore/Ajanta-and-Ellora-Caves-Tourism" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
-            src="https://whc.unesco.org/uploads/thumbs/site_0244_0004-1200-630-20100705114254.jpg"
-            class="card-img-top blog-img" alt="Majestic Mountains">
-            <div class="card-body">
-              <h5 class="card-title">Elephanta Caves (Mumbai)</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Ancient Shiva-dedicated rock-cut caves, accessed by a serene ferry ride from Mumbai.</p>
-              <a href="/explore/Elephanta-Caves-A-UNESCO-World-Heritage-Site-in-Mumbai" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
-            src="https://s7ap1.scene7.com/is/image/incredibleindia/lonavala-and-khandala-mumbai-maharashtra-2-attr-hero?qlt=82&ts=1727355347956" class="d-block "
-            class="card-img-top blog-img" alt="Enchanting Forests">
-            <div class="card-body">
-              <h5 class="card-title">Lonavala and Khandala Twin Hill Stations of Tranquility</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Popular hill stations featuring waterfalls, greenery, trekking trails, and delicious chikki.</p>
-              <a href="/explore/Lonavala-and-Khandala-Twin-Hill-Stations-of-Tranquility" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
-            src="https://static.toiimg.com/thumb/msid-101974149,width-1280,height-720,resizemode-72/101974149.jpg" class="d-block "
-            class="card-img-top blog-img" alt="Tropical Beach">
-            <div class="card-body">
-              <h5 class="card-title">Raigad Fort: The Capital of the Maratha Empire</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Shivaji Maharaj’s capital fort offering panoramic views, trekking adventures, and historical legacy.</p>
-              <a href="/explore/Raigad-Fort-The-Capital-of-the-Maratha-Empire" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
+            <div class="row">
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj0rd6-UsmLdaJF_4VzpaHQzIRVssfzIARswwu6UYJoq-9J0TOSa0ZJqMEYHpX3V3IS_qTg9_w6GZdqQy5o0_CuvSL57FtsfDPFIXMETNhzJkA0O8r2B5O9Jkl51u3XFs7-9yPMM-cCIG4/w1200-h630-p-k-no-nu/Ajanta+Painting+ Padmapani+03.jpg"
+                            class="card-img-top blog-img" style="height: 200px; overflow: hidden;"
+                            alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Ajanta and Ellora Caves Tourism
+                                </h5>
+                                <p>UNESCO heritage caves showcasing ancient sculptures, murals, and spiritual artistry,
+                                    reflecting India's rich cultural history.</p>
+                            </div>
+                            <div>
+                                <a href="/explore/Ajanta-and-Ellora-Caves-Tourism" class="read-more-btn">Read More
+                                    &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img src="https://whc.unesco.org/uploads/thumbs/site_0244_0004-1200-630-20100705114254.jpg"
+                            class="card-img-top blog-img" style="height: 200px; overflow: hidden;"
+                            alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Elephanta Caves (Mumbai)
+                                </h5>
+                                <p>Ancient Shiva-dedicated rock-cut caves, accessed by a serene ferry ride from Mumbai.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="/explore/Elephanta-Caves-A-UNESCO-World-Heritage-Site-in-Mumbai"
+                                    class="read-more-btn">Read More &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img src="https://s7ap1.scene7.com/is/image/incredibleindia/lonavala-and-khandala-mumbai-maharashtra-2-attr-hero?qlt=82&ts=1727355347956"
+                            class="d-block " class="card-img-top blog-img" style="height: 200px; overflow: hidden;"
+                            alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Lonavala and Khandala Twin Hill Stations of Tranquility
+                                </h5>
+                                <p>
+                                    Popular hill stations featuring waterfalls, greenery, trekking trails, and delicious
+                                    chikki.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="/explore/Lonavala-and-Khandala-Twin-Hill-Stations-of-Tranquility"
+                                    class="read-more-btn">Read More &raquo;</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img src="https://static.toiimg.com/thumb/msid-101974149,width-1280,height-720,resizemode-72/101974149.jpg"
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Raigad Fort: The Capital of the Maratha Empire
+                                </h5>
+                                <p>
+                                    Shivaji Maharaj’s capital fort offering panoramic views, trekking adventures, and
+                                    historical legacy.
+                                </p>
+                            </div>
+                            <div>
+                                <a href="/explore/Raigad-Fort-The-Capital-of-the-Maratha-Empire"
+                                    class="read-more-btn">Read More &raquo;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img 
             src="https://www.holidify.com/images/bgImages/MAHABALESHWAR.jpg" class="d-block "
-            class="card-img-top blog-img" alt="Majestic Mountains">
-            <div class="card-body">
-              <h5 class="card-title">Mahabaleshwar</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Scenic hill station known for lush valleys, strawberry farms, viewpoints, and cool weather. </p>
+
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Mahabaleshwar
+                                </h5>
+                                <p>
+                                    Scenic hill station known for lush valleys, strawberry farms, viewpoints, and cool weather.
+                                </p>
+                            </div>
+                            <div>
               <a href="/explore/Mahabaleshwar-The-Queen-of-Hill-Stations-in-Maharashtra" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img 
             src="https://saishishirtours.in/wp-content/uploads/2024/05/shirdi-sai-baba-1-2.webp"
-            class="card-img-top blog-img" alt="Enchanting Forests">
-            <div class="card-body">
-              <h5 class="card-title">Shirdi: The Spiritual Abode of Sai Baba</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Sacred pilgrimage town of Sai Baba, offering peace and spirituality to devotees worldwide.</p>
+
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Shirdi: The Spiritual Abode of Sai Baba
+                                </h5>
+                                <p>
+                                    Sacred pilgrimage town of Sai Baba, offering peace and spirituality to devotees worldwide.
+                                </p>
+                            </div>
+                            <div>
               <a href="/explore/Shirdi-The-Spiritual-Abode-of-Sai-Baba" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div><div class="col-md-4">
-          <div class="card blog-card">
-            <img 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img 
             src="https://static.toiimg.com/thumb/112926659/Sindhudurg-maharashtra.jpg?width=636&height=358&resize=4"
-            class="card-img-top blog-img" alt="Tropical Beach">
-            <div class="card-body">
-              <h5 class="card-title">Sindhudurg Fort A Majestic Sea Fort in Malvan</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Maratha sea fort with historical significance, showcasing Chhatrapati Shivaji Maharaj's naval expertise.</p>
+
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Sindhudurg Fort A Majestic Sea Fort in Malvan
+                                </h5>
+                                <p>
+                                    Maratha sea fort with historical significance, showcasing Chhatrapati Shivaji Maharaj's naval expertise.
+                                </p>
+                            </div>
+                            <div>
               <a href="/explore/Sindhudurg-Fort-A-Majestic-Sea-Fort-in-Malvan" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img 
             src="https://vajiram-prod.s3.ap-south-1.amazonaws.com/Tadoba_Andhari_Tiger_Reserve_TATR_c6acc8ea55.jpg"
-            class="card-img-top blog-img" alt="Majestic Mountains">
-            <div class="card-body">
-              <h5 class="card-title">Tadoba Andhari Tiger Reserve</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">A lush wildlife sanctuary home to tigers, diverse species, and vibrant natural landscapes.</p>
+
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    Tadoba Andhari Tiger Reserve
+                                </h5>
+                                <p>
+                                    A lush wildlife sanctuary home to tigers, diverse species, and vibrant natural landscapes.
+                                </p>
+                            </div>
+                            <div>
               <a href="/explore/Tadoba-Andhari-Tiger-Reserve" class="read-more-btn">Read More &raquo;</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card blog-card">
-            <img 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mt-3">
+                    <div class="card blog-card" style="overflow: hidden;">
+                        <img 
             src="https://www.theleela.com/prod/content/assets/styles/tl_1920_735/public/aio-banner/dekstop/Gateway-of-India.jpg.webp?VersionId=BBxisw7aW9Kz83zStkv29pnD8GMbviPB&itok=MEEZTfkO"
-            class="card-img-top blog-img" alt="Enchanting Forests">
-            <div class="card-body">
-              <h5 class="card-title">The Gateway of India</h5>
-              <p class="card-text" style="height: 100px; overflow: hidden;">Iconic seaside monument symbolizing Mumbai’s colonial past, a hub for tourists and photographers.</p>
+
+                            class="d-block " class="d-block " class="card-img-top blog-img"
+                            style="height: 200px; overflow: hidden;" alt="Enchanting Forests">
+                        <div class="card-body" style="">
+                            <div style="height: 150px; overflow: hidden;">
+                                <h5 style="white-space: no-wrap; overflow: hidden;text-overflow: ellipsis;">
+                                    The Gateway of India
+                                </h5>
+                                <p>
+                                    Iconic seaside monument symbolizing Mumbai’s colonial past, a hub for tourists and photographers.
+                                </p>
+                            </div>
+                            <div>
               <a href="/explore/The-Gateway-of-India" class="read-more-btn">Read More &raquo;</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional blog cards can be added here -->
             </div>
-          </div>
         </div>
-        <!-- Additional blog cards can be added here -->
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-3 bg-dark text-white text-center">
-    <p class="mb-0">© 2024 Explore Places. All rights reserved.</p>
-  </footer>
+    <!-- Footer -->
+    <footer class="py-3 bg-dark text-white text-center">
+        <p class="mb-0">© 2024 Explore Places. All rights reserved.</p>
+    </footer>
 
-  <!-- Bootstrap 5 JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
