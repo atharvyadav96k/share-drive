@@ -336,7 +336,7 @@ exports.acceptRequestCar = async (req, res) => {
 // display all cars
 exports.getCars = async (req, res) => {
     try {
-        const cars = await Car.find().select('name thumbnail pricePerDay _id');
+        const cars = await Car.find().select('name thumbnail pricePerDay _id seats');
         return res.render('cars/car', { cars, verified: req.user_verified, username: req.user_name, profile: req.user_id });
     } catch (err) {
         return res.status(500).send("<h1 style=`text-align: center;`> Something went wring </h1>");
