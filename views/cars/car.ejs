@@ -10,7 +10,7 @@
 		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 
-<body>
+<body style="background-color: #f1f1f1;">
 	<style>	
 		.card {
 			width: 100%;
@@ -61,32 +61,22 @@
 	<div class="container mt-3">
 		<div class="row">
 			<% cars.forEach((ele)=>{ %>
-				<div class="col-lg-4 col-md-6 col-sm-12 mb-3">
-					<div class="card h-100 d-flex flex-column">
-						<!-- Card Image -->
-						<img src="<%= ele.thumbnail %>" class="card-img-top img-fluid"
-							alt="<%= ele.name %>" style="object-fit: contain; height: 200px;">
-
-						<!-- Card Body -->
-						<div class="card-body d-flex flex-column justify-content-between">
-							<!-- Item Name -->
-							<p class="fw-bold text-center text-truncate" title="<%= ele.name %>">
-								<%= ele.name %>
-							</p>
-
-							<!-- Action Buttons -->
-							<div class="d-flex justify-content-between mt-auto">
-								<a href="/car/request/<%= ele._id %>" class="btn btn-primary flex-fill mx-1">
-									Request
-								</a>
-								<a href="/car/details/<%= ele._id %>" class="btn btn-success flex-fill mx-1">
-									Details
-								</a>
-							</div>
+				
+				<div class="col-lg-4 col-md-6 mt-2">
+					<div class="card" style="width: 19rem; margin: auto;">
+						<img style="object-fit: contain; height: 200px;" src="<%= ele.thumbnail %>" class="card-img-top" alt="Car Image">
+						<div class="card-body">
+							<h5 class="card-title">Car Name: <%= ele.name %></h5>
+							<p class="card-text">Seats: 5</p>
+							<a href="/car/request/<%= ele._id %>" class="btn btn-primary">Book Now</a>
+							<a href="/car/details/<%= ele._id %>" class="btn btn-link">View Details
+								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
+									<path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
+								  </svg>
+							</a>
 						</div>
 					</div>
 				</div>
-
 				<% }) %>
 		</div>
 	</div>
