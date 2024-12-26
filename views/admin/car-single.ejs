@@ -2,34 +2,35 @@
 <html lang="en">
 
 <head>
-	<title>Share Drive <%= car.name %>
-	</title>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <title>Share Drive <%= car.name %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
 
-	<meta property="og:image" content="https://sharedrive.org.in<%= car.path %>">
-	<meta property="og:title" content="Drive a <%= car.name %> with Share Drive">
-	<meta property="og:description"
-		content="Rent a <%= car.name %> for just ₹<%= car.pricePerDay %>/day with Share Drive. Book now!">
-	<meta property="og:type" content="website">
-	<meta property="og:image:width" content="1200">
-	<meta property="og:image:height" content="630">
-	<link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
-		rel="stylesheet">
-	<link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="/css/animate.css">
-	<link rel="stylesheet" href="/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="/css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="/css/magnific-popup.css">
-	<link rel="stylesheet" href="/css/aos.css">
-	<link rel="stylesheet" href="/css/ionicons.min.css">
-	<link rel="stylesheet" href="/css/bootstrap-datepicker.css">
-	<link rel="stylesheet" href="/css/jquery.timepicker.css">
-	<link rel="stylesheet" href="/css/flaticon.css">
-	<link rel="stylesheet" href="/css/icomoon.css">
-	<link rel="stylesheet" href="/css/style.css">
+    <!-- Open Graph Metadata -->
+    <meta property="og:image" content="https://sharedrive.org.in<%= car.path || '/uploads/default-image.jpg' %>">
+    <meta property="og:title" content="Drive a <%= car.name %> with Share Drive">
+    <meta property="og:description" content="Rent a <%= car.name %> for just ₹<%= car.pricePerDay %>/day with Share Drive. Book now!">
+    <meta property="og:type" content="website">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Fonts and Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/aos.css">
+    <link rel="stylesheet" href="/css/ionicons.min.css">
+    <link rel="stylesheet" href="/css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="/css/jquery.timepicker.css">
+    <link rel="stylesheet" href="/css/flaticon.css">
+    <link rel="stylesheet" href="/css/icomoon.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 
 
 <body>
