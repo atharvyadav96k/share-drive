@@ -44,6 +44,7 @@ async function saveImageToBucket(file, resizedImage) {
         const imageUrl = `/car/preview/${uniqueName}`;
         return imageUrl;
     } catch (error) {
+        console.log(err)
         throw new Error('Failed to save image locally: ' + error.message);
     }
 }
@@ -51,7 +52,7 @@ async function saveImageToBucket(file, resizedImage) {
 // sending thumbnail to client
 exports.getPreviewImage = async (req, res) => {
     const { key } = req.params;
-    try {   
+    try {
         const getObjectParams = {
             Bucket: bucketName,
             Key: key
@@ -60,6 +61,7 @@ exports.getPreviewImage = async (req, res) => {
         const url = await getSignedUrl(s3, command, { expiresIn: 30 });
         res.redirect(url);
     } catch (err) {
+        console.log(err)
         res.status(500).send('Failed to fetch image' + err.message);
     }
 }
@@ -90,7 +92,7 @@ exports.storeCarDetails = async (req, res) => {
 
         const imageBuffer = req.file.buffer;
         const thumbnailBuffer = await reduceImageSize(imageBuffer);
-        
+
         // const storeImage = await saveImageToBucket(req.file, thumbnailBuffer);
         const car = new Car({
             name,
@@ -143,6 +145,7 @@ exports.storeCarDetails = async (req, res) => {
         await car.save();
         res.redirect(`/admin/cars`);
     } catch (error) {
+        console.log(err)
         console.error(error);
         res.status(500).json('Failed to save car details.' + error);
     }
@@ -174,7 +177,7 @@ exports.updateCarDetails = async (req, res) => {
 
     try {
         let car = await Car.findById(id);
-        
+
         car.name = name || car.name;
         car.mileage = mileage || car.mileage;
         car.transmission = transmission || car.transmission;
@@ -198,7 +201,7 @@ exports.updateCarDetails = async (req, res) => {
         if (!car) {
             return res.status(404).json({ message: "Car not found" });
         }
-       if (req.file) {
+        if (req.file) {
             // Ensure uploads directory exists
             const uploadDir = path.join(__dirname, '../public/uploads');
             ensureDirectoryExists(uploadDir);
@@ -209,7 +212,7 @@ exports.updateCarDetails = async (req, res) => {
 
             const thumbnailName = `thumb-${Date.now()}-${req.file.originalname}`;
             const thumbnailPath = path.join(uploadDir, thumbnailName);
-    
+
 
             // Save original image
             fs.writeFileSync(imagePath, req.file.buffer);
@@ -227,6 +230,7 @@ exports.updateCarDetails = async (req, res) => {
 
         res.redirect(`/admin/cars`)
     } catch (err) {
+        console.log(err)
         res.status(500).json({ message: "Error updating car details", error: err.message });
     }
 };
@@ -239,6 +243,7 @@ exports.deleteCar = async (req, res) => {
         const car = await Car.findOneAndDelete({ _id: id });
         res.redirect("/admin/cars")
     } catch (err) {
+        console.log(err)
         res.send("err : " + err.message)
     }
 }
@@ -258,6 +263,7 @@ const reduceImageSize = async (imageBuffer) => {
 
         return resizedImageBuffer;
     } catch (error) {
+        console.log(err)
         throw new Error('Failed to reduce image size: ' + error.message);
     }
 };
@@ -303,6 +309,7 @@ exports.requestCar = async (req, res) => {
         const car = await Car.findOne({ _id: id }).select("name pricePerDay thumbnail image _id");
         return res.render('cars/requestCar', { car, name, email, phoneNo, userId: req.user_id });
     } catch (err) {
+        console.log(err)
         return res.status(500).send("Bad Request");
     }
 }
@@ -330,6 +337,7 @@ exports.acceptRequestCar = async (req, res) => {
         await requestEmail(email, car.name, car.pricePerDay, name, user.phoneNo)
         return res.render('cars/requestSuccess')
     } catch (err) {
+        console.log(err)
         return res.status(500).send("error : " + err.message);
     }
 }
@@ -339,46 +347,50 @@ exports.getCars = async (req, res) => {
         const cars = await Car.find().select('name thumbnail pricePerDay _id seats');
         return res.render('cars/car', { cars, verified: req.user_verified, username: req.user_name, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         return res.status(500).send("<h1 style=`text-align: center;`> Something went wring </h1>");
     }
 }
 
 // cancel car
-exports.cancelCarRequest = async (req, res)=>{
-    const {id} = req.params;
-    try{
-        const request = await Request.findOne({_id: id});
-        if(!request) return res.status(404).send("404 not found");
+exports.cancelCarRequest = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const request = await Request.findOne({ _id: id });
+        if (!request) return res.status(404).send("404 not found");
         request.status = 'cancel';
         await request.save();
         return res.redirect('/admin/requests');
-    }catch(err){
-        return res.status(500).send("Error: "+ err.message);
+    } catch (err) {
+        console.log(err)
+        return res.status(500).send("Error: " + err.message);
     }
 }
 // accept car
-exports.acceptCar = async (req, res)=>{
-    const {id} = req.params;
-    try{
-        const request = await Request.findOne({_id: id});
-        if(!request) return res.status(404).send("404 not found");
+exports.acceptCar = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const request = await Request.findOne({ _id: id });
+        if (!request) return res.status(404).send("404 not found");
         request.status = 'approve';
         await request.save();
         return res.redirect('/admin/requests');
-    }catch(err){
-        return res.status(500).send("Error :"+err.message);
+    } catch (err) {
+        console.log(err)
+        return res.status(500).send("Error :" + err.message);
     }
 }
 
-exports.pendingCarRequest = async (req, res)=>{
-    const {id} = req.params;
-    try{
-        const request = await Request.findOne({_id: id});
-        if(!request) return res.status(404).send("404 not found");
+exports.pendingCarRequest = async (req, res) => {
+    const { id } = req.params;
+    try {
+        const request = await Request.findOne({ _id: id });
+        if (!request) return res.status(404).send("404 not found");
         request.status = 'pending';
         await request.save();
         return res.redirect('/admin/requests');
-    }catch(err){
-        return res.status(500).send("Error :"+err.message);
+    } catch (err) {
+        console.log(err)
+        return res.status(500).send("Error :" + err.message);
     }
 }

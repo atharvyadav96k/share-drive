@@ -14,6 +14,7 @@ view.get('/', isAuth, async (req, res) => {
         const cars = await Cars.find().limit(6);
         res.render('index', { verified: req.user_verified, profile: req.user_id, domain: process.env.DOMAIN, cars });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -22,6 +23,7 @@ view.get('/about', isAuth, (req, res) => {
     try {
         res.render('about', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -30,6 +32,7 @@ view.get('/services', isAuth, (req, res) => {
     try {
         res.render('services', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -38,6 +41,7 @@ view.get('/verification', isAuth, (req, res) => {
     try {
         res.render('auth/verifyMail', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -46,6 +50,7 @@ view.get('/pricing', isAuth, (req, res) => {
     try {
         res.render('cars/pricing', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -54,6 +59,7 @@ view.get('/car', isAuth, async (req, res) => {
     try {
         await getCars(req, res);
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -62,6 +68,7 @@ view.get('/contact', isAuth, (req, res) => {
     try {
         res.render('contact', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -88,6 +95,7 @@ view.get('/profile/:id', isAuth, async (req, res) => {
             cars
         });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -96,6 +104,7 @@ view.get('/car-details', isAuth, (req, res) => {
     try {
         res.render('cars/car-single', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -105,6 +114,7 @@ view.get('/forget-password', (req, res) => {
     try {
         res.render('auth/setPassordMail');
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -118,6 +128,7 @@ view.post('/forget-password', async (req, res) => {
         await forgetPassword(email, token);
         res.status(200).send("Successfully sent mail");
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -126,6 +137,7 @@ view.get('/set-password/:token', (req, res) => {
     try {
         res.render("auth/setPassword", { url: req.params.token });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -150,6 +162,7 @@ view.post('/set-password/:token', async (req, res) => {
 
         res.status(200).send("Password changed successfully");
     } catch (err) {
+        console.log(err)
         res.status(500).send("An error occurred while processing the token: " + err.message);
     }
 });
@@ -160,6 +173,7 @@ view.get('/login', isAuth, (req, res) => {
         if (req.user_verified) return res.redirect('/car#cars');
         res.render('auth/login');
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
@@ -168,6 +182,7 @@ view.get('/register', (req, res) => {
     try {
         res.render('auth/register', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
+        console.log(err)
         res.status(500).send("Something went wrong: " + err.message);
     }
 });

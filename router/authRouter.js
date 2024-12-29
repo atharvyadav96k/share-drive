@@ -29,6 +29,7 @@ auth.get('/update-profile', isAuth, async (req, res)=>{
         user.save();
         res.redirect(`/profile/${req.user_id}`);
     }catch(err){
+        console.log(err);
         res.status(500).send("Internal server error")
     }
 })
@@ -38,6 +39,7 @@ auth.get('/resend-verification-link', isAuth, async (req, res)=>{
         await verificationLink(req.user_email, req.user_id);
         return res.redirect('/verification');
     }catch(error){
+        console.log(err);
         return res.send("Something went wrong");
     }
 })
@@ -53,7 +55,8 @@ auth.get('/:id',async (req, res)=>{
         }
         return res.send("invalid verification link");
     }catch(err){
-        return res.send("Something want wrong", err.message);
+        console.log(err);
+        return res.send("Something want wrong"+ err.message);
     }
 })
 module.exports = auth;

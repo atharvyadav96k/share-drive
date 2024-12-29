@@ -28,6 +28,7 @@ admin.get('/editCar/:id', checkAdmin,async (req, res) => {
     console.log(car)
     res.render('admin/editCar', { car, id: req.params.id });
   } catch (err) {
+    console.log(err);
     res.status(500).send("Error: " + err.message);
   }
 });
@@ -39,21 +40,27 @@ admin.get('/login', (req, res) => {
 });
 admin.post('/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
-    const token = jwt.sign({ role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1h' });
-    res.clearCookie('login-status');
-    res.cookie('admin-auth', token, {
-      httpOnly: true,
-      sameSite: 'Strict'
-    });
-    res.redirect('/admin');
-  } else {
-    res.cookie('login-status', 'failed', {
-      sameSite: 'Strict',
-      maxAge: 5 * 60 * 1000, 
-    });
-    res.redirect('/admin/login');
+  try{
+    if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
+      const token = jwt.sign({ role: 'admin' }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      res.clearCookie('login-status');
+      res.cookie('admin-auth', token, {
+        httpOnly: true,
+        sameSite: 'Strict'
+      });
+      res.redirect('/admin');
+    } else {
+      res.cookie('login-status', 'failed', {
+        sameSite: 'Strict',
+        maxAge: 5 * 60 * 1000, 
+      });
+      res.redirect('/admin/login');
+    }
+  }catch(err){
+    console.log(err);
+    res.send("Please try again");
   }
+  
 });
 
 // admin logout
@@ -73,6 +80,7 @@ admin.get('/cars', checkAdmin,async (req, res) => {
     const cars = await Car.find().select("_id thumbnail name pricePerDay");
     res.render('admin/getAllCars', { cars })
   } catch (err) {
+    console.log(err)
     res.status(500).send("error: " + err.message);
   }
 })
@@ -114,6 +122,7 @@ function checkAdmin(req, res, next) {
     }
     next();
   } catch (err) {
+    console.log(err)
     return res.redirect('/admin/login')
   }
 }
