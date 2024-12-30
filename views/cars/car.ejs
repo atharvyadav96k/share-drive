@@ -2,90 +2,126 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>ShareDrive Cars</title>
-	<link rel="icon" href="/images/favicon.png">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShareDrive Cars</title>
+  <link rel="icon" href="/images/favicon.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #f1f1f1;
+    }
+
+    .filter-container {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .filter-container label {
+		cursor: pointer;
+    }
+
+    .filter-btn {
+      background-color: #1871e3;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      padding: 5px 15px;
+      margin: 5px;
+    }
+
+    .filter-btn.active {
+      background-color: #000;
+    }
+
+    .card {
+      width: 100%;
+      box-shadow: 1px 1px 10px 1px #e1e1e1;
+      border: none;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+  </style>
 </head>
 
-<body style="background-color: #f1f1f1;">
-	<style>	
-		.card {
-			width: 100%;
-			height: 100%;
-			box-shadow: 1px 1px 10px 1px #e1e1e1;
-			border-width: 0px;
-		}
-	</style>
-	<div class="container" style="position: sticky; top: 0px; z-index: 100;">
-		<nav class="navbar navbar-expand-lg bg-body-tertiary">
-			<div class="container-fluid">
-			  <a class="navbar-brand" href="/">
-				<img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
-				<strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;"><span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span></strong>
-			  </a>
-			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			  </button>
-			  <div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-				  <li class="nav-item">
-					<a class="nav-link text-primary fw-semibold" aria-current="page" href="/about">About</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link text-primary fw-semibold" href="/services">Services</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link text-primary fw-semibold" href="/pricing">Pricing</a>
-				  </li>
-				  <li class="nav-item">
-					<a class="nav-link text-primary fw-semibold" href="/car">Cars</a>
-				  </li>
-				  <% if(profile){ %>
-					<li class="nav-item">
-					  <a class="nav-link text-primary fw-semibold" href="/profile/<%= profile %>">Profile</a>
-					</li>
-				  <% } else{%>
-					<li class="nav-item">
-					  <a class="nav-link text-primary fw-semibold" href="/login">Login</a>
-					</li>
-				  <% } %>
-				</ul>
-			  </div>
-			</div>
-		  </nav>
-	</div>
-	<div class="container mt-3">
-		<div class="row">
-			<% cars.forEach((ele)=>{ %>
-				
-				<div class="col-lg-4 col-md-6 mt-2">
-					<div class="card" style="width: 19rem; margin: auto;">
-						<img style="object-fit: contain; height: 200px;" src="<%= ele.thumbnail %>" class="card-img-top" alt="Car Image">
-						<div class="card-body">
-							<h5 class="card-title">Car Name: <%= ele.name %></h5>
-							<p class="card-text">Seats: <%= ele.seats %></p>
-							<div style="display: flex; justify-content: space-between;">
-								<a href="/car/request/<%= ele._id %>" class="btn btn-primary">Book Now</a>
-							<a href="/car/details/<%= ele._id %>" class="btn btn-link">View Details
-								<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-arrow-up-right" viewBox="0 0 16 16">
-									<path fill-rule="evenodd" d="M14 2.5a.5.5 0 0 0-.5-.5h-6a.5.5 0 0 0 0 1h4.793L2.146 13.146a.5.5 0 0 0 .708.708L13 3.707V8.5a.5.5 0 0 0 1 0z"/>
-								  </svg>
-							</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<% }) %>
-		</div>
-	</div>
+<body>
+  <div class="container" style="position: sticky; top: 0px; z-index: 100;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
+          <strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;">
+            <span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span>
+          </strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/about">About</a></li>
+            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/services">Services</a></li>
+            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/pricing">Pricing</a></li>
+            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/car">Cars</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-		crossorigin="anonymous"></script>
+  <div class="container">
+	<div class="container filter-container mt-2">
+		<h5>Filter Cars</h5>
+		<button class="filter-btn" onclick="filterCars('5')">5 Seats</button>
+		<button class="filter-btn" onclick="filterCars('7')">7 Seats</button>
+		<button class="filter-btn" onclick="filterCars('all')">All</button>
+	  </div>
+  </div>
+
+  <div class="container mt-3">
+    <div class="row" id="cars-container">
+      <% cars.forEach((ele) => { %>
+      <div class="col-lg-4 col-md-6 mt-2 seats-<%= ele.seats %>">
+        <div class="card" style="margin: auto;">
+          <img style="object-fit: contain; height: 200px;" src="<%= ele.thumbnail %>" class="card-img-top" alt="Car Image">
+          <div class="card-body">
+            <h5 class="card-title">Car Name: <%= ele.name %></h5>
+            <p class="card-text">Seats: <%= ele.seats %></p>
+            <div style="display: flex; justify-content: space-between;">
+              <a href="/car/request/<%= ele._id %>" class="btn btn-primary">Book Now</a>
+              <a href="/car/details/<%= ele._id %>" class="btn btn-link">View Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+
+  <script>
+    function filterCars(seats) {
+      const allCards = document.querySelectorAll('[class*="seats-"]');
+      allCards.forEach(card => {
+        if (seats === 'all' || card.classList.contains(`seats-${seats}`)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`.filter-btn[onclick*="${seats}"]`).classList.add('active');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 
 </html>
