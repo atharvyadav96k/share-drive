@@ -1,5 +1,7 @@
 const express = require('express');
 const admin = express.Router();
+const fs = require('fs');
+const path = require('path');
 const multer = require('multer');
 const jwt = require('jsonwebtoken')
 const { storeCarDetails, displayCar, getRequests,updateCarDetails, deleteCar, cancelCarRequest, acceptCar, pendingCarRequest} = require('../utils/carsUtils');
@@ -126,5 +128,6 @@ function checkAdmin(req, res, next) {
     return res.redirect('/admin/login')
   }
 }
+
 
 module.exports = admin;

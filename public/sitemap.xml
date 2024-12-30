@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://www.sharedrive.org.in/about</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Services Page -->
+  <url>
+    <loc>https://www.sharedrive.org.in/services</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Pricing Page -->
+  <url>
+    <loc>https://www.sharedrive.org.in/pricing</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Terms and Conditions Page -->
+  <url>
+    <loc>https://www.sharedrive.org.in/terms-and-conditions</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Explore Page -->
+  <url>
+    <loc>https://www.sharedrive.org.in/explore</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Explore Subpages -->
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Ajanta-and-Ellora-Caves-Tourism</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Elephanta-Caves-A-UNESCO-World-Heritage-Site-in-Mumbai</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Lonavala-and-Khandala-Twin-Hill-Stations-of-Tranquility</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Raigad-Fort-The-Capital-of-the-Maratha-Empire</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Mahabaleshwar-The-Queen-of-Hill-Stations-in-Maharashtra</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Shirdi-The-Spiritual-Abode-of-Sai-Baba</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Sindhudurg-Fort-A-Majestic-Sea-Fort-in-Malvan</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/Tadoba-Andhari-Tiger-Reserve</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sharedrive.org.in/explore/The-Gateway-of-India</loc>
+    <lastmod>2024-12-30T12:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>
