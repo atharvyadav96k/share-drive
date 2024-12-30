@@ -4,14 +4,14 @@
   <url>
     <loc>https://www.sharedrive.org.in</loc>
     <lastmod>2024-12-30T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- About Page -->
   <url>
     <loc>https://www.sharedrive.org.in/about</loc>
     <lastmod>2024-12-30T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
 
@@ -19,7 +19,7 @@
   <url>
     <loc>https://www.sharedrive.org.in/services</loc>
     <lastmod>2024-12-30T12:00:00+00:00</lastmod>
-    <changefreq>monthly</changefreq>
+    <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
 

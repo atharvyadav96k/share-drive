@@ -20,11 +20,17 @@
       background-color: #007bff;
     }
 
+    h1{
+      color:#0056b3;
+      padding: 10px;
+    }
     .navbar-brand {
       font-size: 24px;
       font-weight: bold;
     }
-
+    li h5{
+      color:#3489ff;
+    }
     .custom-box {
       max-width: 500px;
       border: 1px solid #ddd;
@@ -38,12 +44,12 @@
       background-color: #0056b3;
       color: white;
       font-weight: bold;
-      padding: 15px;
+      padding: 10px;
       text-align: center;
     }
 
     .custom-content {
-      padding: 20px;
+      padding: 10px;
     }
 
     .form-control,
@@ -67,6 +73,9 @@
       width: 0px;
     }
 
+    p{
+      text-align: justify;
+    }
     .card {
       transition: transform 0.2s;
     }
@@ -139,7 +148,8 @@
         </div>
       </div>
     </nav>
-  </div>  
+  </div>
+  
   <div class="container mt-1">
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="max-height: 550px; overflow: hidden;">
       <div class="carousel-indicators">
@@ -168,7 +178,10 @@
       </button>
     </div>
   </div>
-
+  <div class="container">
+    <h1 >Affordable Car Rental Services in Mumbai – Sharedrive</h1>
+    <p>Welcome to Sharedrive, your trusted partner for affordable and reliable car rental in Mumbai. Whether you're searching for a self-drive car rental in Mumbai or a car rental with a driver, we offer flexible and convenient solutions tailored to your needs.</p>
+  </div>  
   <div class="container mt-4 mb-4">
     <div class="custom-box">
       <div class="custom-header">
@@ -176,7 +189,7 @@
       </div>
       <div class="custom-content">
         <div class="custom-row">
-          <div class="me-2" style="flex: 1;">
+          <div class="me-1" style="flex: 1;">
             <label for="location" class="form-label">Location</label>
             <select id="location" class="form-select" required>
               <option selected>Select Location</option>
@@ -196,7 +209,7 @@
               <input type="date" id="pickUpDate" required class="form-control">
             </div>
           </div>
-          <div style="height: 100%; margin-top: 30px;">
+          <div style="height: 100%; margin-top: 10px;">
             <a type="submit" value="search" href="/car" class="btn btn-primary">Search</a>
           </div>
         </div>
@@ -205,7 +218,7 @@
   </div>
   <div style="background-color: #E2EEFF;" class="p-2">
     <div class="container">
-      <h1 class="text-secondary-emphasis text-center mb-4">Discover Amazing Cars</h1>
+      <h1 class=" text-center mb-4">Discover Amazing Cars</h1>
       <div class="horizontal d-flex flex-wrap justify-content-start">
         <% cars.forEach((car) => { %>
           <div class="card m-2" style="min-width: 250px; width: 18rem; border-radius: 10px; overflow: hidden; height: 240px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
@@ -235,9 +248,13 @@
       </div>
     </div>
   </div>
-
+  <div class="container">
+    <h1>Your Go-To Mumbai Car Rental Service</h1>
+    <p>At Sharedrive, we simplify travel by providing practical and cost-effective car rental services in Mumbai. Whether you need a car for a short trip, a weekend getaway, or a long-term rental, our wide range of vehicles ensures you’ll find the perfect option. From compact cars for solo travelers to spacious SUVs for families, we’ve got something for everyone. </p>
+    
+  </div>
   <div class="container mt-1">
-    <h2 class="text-center m-4">Discover Amazing Places</h2>
+    <h1 class="text-center m-4">Discover Amazing Places</h1>
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -289,6 +306,97 @@
   <div  style="display: flex;justify-content: center;padding-top: 20px;">
     <a href="/explore" class="btn btn-primary" style="margin: auto;">let's go</a>
     </div>
+  <div class="container">
+    <h1>Why Choose Sharedrive for Your Car Rental Needs?</h1>
+    <ul>
+      <li>
+        <h5>
+          Variety of Rental Options
+        </h5>
+        <p>
+          Choose from a diverse fleet that includes compact cars, sedans, and SUVs. Whether you’re looking for self-drive cars in Mumbai or a car rental with a driver, Sharedrive has you covered.
+        </p>
+      </li>
+      <li>
+        <h5>
+          Affordable Prices
+        </h5>
+        <p>
+          We offer competitive and transparent pricing on all our rentals, ensuring you get the best value. Whether you're booking a self-drive car for rent in Mumbai or a car with a driver, you’ll find budget-friendly rates every time.
+        </p>
+      </li>
+      <li>
+        <h5>
+          Convenient Locations
+        </h5>
+        <p>
+          With rental hubs strategically located across the city, finding a car rental near you is easy. Whether you’re at the airport, in the city center, or near your home, we’re just around the corner.
+        </p>
+      </li>
+      <li>
+        <h5>
+          Flexible Rental Periods
+        </h5>
+        <p>
+          Rent a car for a few hours or several days with our flexible plans. From quick errands to long-distance journeys, Sharedrive makes it easy to find the right car for your needs.
+        </p>
+      </li>
+      <li>
+        <h5>
+          Reliable Service
+        </h5>
+        <p>
+          Our vehicles are regularly serviced and well-maintained, ensuring a safe and comfortable experience for every customer.
+        </p>
+      </li>
+      <li>
+        <h5>
+          24/7 Support
+        </h5>
+        <p>
+          Our dedicated team is available around the clock to provide assistance whenever you need it.
+        </p>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="container">
+    <h1>
+      Mumbai Car Rental Options
+    </h1>
+    <ul>
+      <li>
+        <h5>Self-Drive Car Rentals:</h5>
+        <p>Enjoy the freedom to explore at your own pace with our affordable self-drive car rental services in Mumbai.</p>
+      </li>
+      <li>
+        <h5>Car Rental with Driver</h5>
+        <p>Prefer a stress-free ride? Opt for a car rental with a driver in Mumbai for ultimate convenience.</p>
+      </li>
+      <li>
+        <h5>Short-Term and Long-Term Rentals</h5>
+        <p>Whether it’s a day trip or an extended stay, we offer customizable rental plans to suit your schedule.</p>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <h1>How Sharedrive Stands Out</h1>
+    <ul>
+      <li>
+        <h5>Practical Choices:</h5>
+        <p>We focus on affordability and practicality, offering no-frills, budget-friendly car rental services.</p>
+      </li>
+      <li>
+        <h5>Transparent Pricing: </h5>
+        <p>No hidden costs or surprises—just straightforward, honest rates.</p>
+      </li>
+      <li>
+        <h5>Customer-First Approach: </h5>
+        <p>Your convenience and satisfaction are our top priorities.
+        </p>
+      </li>
+    </ul>
+  </div>
   <div class="container mt-4">
     <h1 class="text-secondary-emphasis text-center mb-5">Services</h1>
     <div class="row d-flex" style="justify-content: center;">
@@ -338,32 +446,6 @@
       </div>
     </div>
   </div>
-  <div class="container">
-    <h1 class="text-secondary-emphasis text-center m-4">Why Choose Us</h1>
-    <p class ="text-secondary p-2">
-      At Sharedrive, we are committed to providing a seamless car rental experience that meets the diverse needs of every traveler. Our extensive fleet includes everything from compact cars, perfect for city drives and solo trips, to luxury vehicles designed for those seeking premium comfort and style. No matter your budget or preference, we offer all our vehicles at competitive and transparent prices, ensuring you always know what you’re paying for—with absolutely no hidden fees.
-      <br>
-      Our strategically located rental hubs make it easy to access our services, whether you’re traveling across the country or venturing internationally. Whether you’re picking up a vehicle near your home, at a major airport, or at a city center, we ensure convenience and accessibility at every step of your journey.
-      <br>
-      We understand that plans can change, which is why we offer flexible rental terms tailored to your schedule—whether you need a car for a few hours, days, or weeks. To further enhance your peace of mind, our dedicated team provides 24/7 customer support, ready to assist you at any time, ensuring a stress-free and smooth rental experience.
-      <br>
-      At Sharedrive, your convenience and satisfaction are our top priorities. We combine affordability, reliability, and exceptional service to help you get where you need to go with confidence and ease.
-    </p>
-    <h1 class="text-secondary-emphasis text-center m-4">Our Promise</h1>
-    <p class="text-secondary p-2">
-      At Sharedrive, we understand that your time and trust are invaluable. That's why we strive to deliver an exceptional car rental experience with every journey. From the moment you choose us, our focus is on exceeding your expectations through impeccable service, competitive rates, and an unwavering commitment to your comfort and convenience.
-      <br>
-      Whether you're embarking on a short business trip, a weekend getaway, or an extended adventure, we ensure that your travel is as smooth and enjoyable as possible. With a wide range of vehicles, transparent pricing, and support at every step, we make renting a car hassle-free.
-      <br>
-      Wherever the road takes you, let Sharedrive be your trusted partner, driving you there with confidence and ease.
-    </p>
-    <h1 class="text-secondary-emphasis text-center m-4">Our Mission</h1>
-    <p class="text-secondary p-2">
-      At Sharedrive, we are dedicated to delivering an unparalleled car rental experience tailored to meet your unique needs. With a diverse fleet of vehicles, ranging from fuel-efficient compact cars to spacious SUVs and luxurious models, we ensure you have the perfect ride for every journey. Coupled with our competitive rates and commitment to exceptional customer support, we make car rentals seamless, affordable, and stress-free.
-      <br>
-      Our mission is to empower you with the freedom to travel on your terms—anywhere, anytime. Whether it’s a business trip, a family vacation, or a spontaneous adventure, Sharedrive is here to get you where you need to go, reliably and comfortably. Your journey begins with us.
-    </p>
-  </div>
   <div class="container-fluid">
     <div class="row" style="min-height: 150px;">
       <div class="col-lg-4 col-12 d-flex justify-content-center" style="height: 150px;background-color: #9CC5FF;">
@@ -378,6 +460,293 @@
         <h1 style="font-size: 80px;" class="text-primary">435</h1>
         <p class="mt-3" style="font-size: 20px;">Happy <br> Clients</p>
       </div>
+    </div>
+  </div>
+  <!-- faq -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Frequently Asked Questions (FAQs) – Sharedrive Car Rental in Mumbai</h2>
+    <div class="accordion" id="faqAccordion">
+      
+      <!-- FAQ 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading1">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+            1. What types of cars are available for rent in Mumbai?
+          </button>
+        </h2>
+        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            At Sharedrive, we offer a wide range of vehicles, including compact cars, sedans, and SUVs. Whether you’re looking for a self-drive car rental in Mumbai or a car with a driver, we have options to suit your needs.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading2">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+            2. Can I rent a car in Mumbai for self-drive?
+          </button>
+        </h2>
+        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes! We provide affordable and convenient self-drive car rental services in Mumbai. Explore the city or go on a road trip with the freedom and flexibility of driving yourself.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading3">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+            3. Are there cars available for rent with a driver?
+          </button>
+        </h2>
+        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Absolutely! If you prefer not to drive, we offer car rental services in Mumbai with a driver for a hassle-free experience.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading4">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+            4. How do I book a car rental near me?
+          </button>
+        </h2>
+        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Booking is easy with Sharedrive. Simply visit our website, browse our fleet, choose your preferred vehicle, and complete the booking process. We have rental hubs across Mumbai to ensure convenience.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading5">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
+            5. What are the rental options for car rentals in Mumbai?
+          </button>
+        </h2>
+        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            We offer flexible rental plans, including hourly, daily, and long-term rentals. Whether you need a car for a quick trip or an extended journey, we have options tailored to your schedule.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading6">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
+            6. Is there a minimum age requirement for renting a car in Mumbai?
+          </button>
+        </h2>
+        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, renters must be at least 21 years old to book a self-drive car for rent with Sharedrive. A valid driving license is also required.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading7">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
+            7. Are there any hidden charges for car rentals?
+          </button>
+        </h2>
+        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            No. We maintain complete transparency with our pricing. The rental cost includes all applicable fees, and there are no hidden charges.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading8">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
+            8. Can I rent a car in Mumbai without a credit card?
+          </button>
+        </h2>
+        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we offer flexible payment options, including debit cards and UPI, to make the booking process easier for everyone.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading9">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
+            9. What documents are required for renting a car?
+          </button>
+        </h2>
+        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            For self-drive car rentals, you’ll need a valid driving license, a government-issued ID, and proof of address. For rentals with a driver, only a valid ID is required.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading10">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse10" aria-expanded="false" aria-controls="faqCollapse10">
+            10. Do you offer roadside assistance?
+          </button>
+        </h2>
+        <div id="faqCollapse10" class="accordion-collapse collapse" aria-labelledby="faqHeading10" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, we provide 24/7 roadside assistance to ensure your journey is stress-free.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading11">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse11" aria-expanded="false" aria-controls="faqCollapse11">
+            11. How are self-drive cars maintained for safety?
+          </button>
+        </h2>
+        <div id="faqCollapse11" class="accordion-collapse collapse" aria-labelledby="faqHeading11" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            All our vehicles undergo regular maintenance and thorough inspections to ensure they are safe and reliable.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading12">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse12" aria-expanded="false" aria-controls="faqCollapse12">
+            12. Is fuel included in the rental price?
+          </button>
+        </h2>
+        <div id="faqCollapse12" class="accordion-collapse collapse" aria-labelledby="faqHeading12" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            No, fuel is not included in the rental price. You will be required to return the car with the same amount of fuel as when you received it.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 13 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading13">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse13" aria-expanded="false" aria-controls="faqCollapse13">
+            13. Can I extend my car rental period?
+          </button>
+        </h2>
+        <div id="faqCollapse13" class="accordion-collapse collapse" aria-labelledby="faqHeading13" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, extensions are possible depending on availability. Please contact our support team in advance to extend your booking.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 14 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading14">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse14" aria-expanded="false" aria-controls="faqCollapse14">
+            14. What should I do in case of an accident while renting a car?
+          </button>
+        </h2>
+        <div id="faqCollapse14" class="accordion-collapse collapse" aria-labelledby="faqHeading14" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            In the event of an accident, please ensure your safety first, contact the police, and then inform us immediately for further instructions. Roadside assistance will be available as well.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 15 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading15">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse15" aria-expanded="false" aria-controls="faqCollapse15">
+            15. Can I rent a car for a one-way trip?
+          </button>
+        </h2>
+        <div id="faqCollapse15" class="accordion-collapse collapse" aria-labelledby="faqHeading15" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, one-way rentals are available. Please inform us in advance about your drop-off location so that we can make the necessary arrangements.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 16 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading16">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse16" aria-expanded="false" aria-controls="faqCollapse16">
+            16. What if I return the car late?
+          </button>
+        </h2>
+        <div id="faqCollapse16" class="accordion-collapse collapse" aria-labelledby="faqHeading16" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Late returns may incur additional charges based on the number of hours or days the car is overdue. Please notify us if you anticipate a delay.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 17 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading17">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse17" aria-expanded="false" aria-controls="faqCollapse17">
+            17. Can I rent a car for a road trip outside Mumbai?
+          </button>
+        </h2>
+        <div id="faqCollapse17" class="accordion-collapse collapse" aria-labelledby="faqHeading17" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, you can rent a car for road trips outside Mumbai. Just inform us in advance and ensure you follow the guidelines for intercity rentals.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 18 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading18">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse18" aria-expanded="false" aria-controls="faqCollapse18">
+            18. How do I cancel my car rental reservation?
+          </button>
+        </h2>
+        <div id="faqCollapse18" class="accordion-collapse collapse" aria-labelledby="faqHeading18" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Cancellations can be made through our website or by contacting our customer support team. Cancellation policies may apply depending on the timing.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 19 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading19">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse19" aria-expanded="false" aria-controls="faqCollapse19">
+            19. How do I contact customer support for my rental car?
+          </button>
+        </h2>
+        <div id="faqCollapse19" class="accordion-collapse collapse" aria-labelledby="faqHeading19" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            You can reach our customer support team through email, phone, or the contact form on our website for any inquiries or assistance.
+          </div>
+        </div>
+      </div>
+
+      <!-- FAQ 20 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="faqHeading20">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse20" aria-expanded="false" aria-controls="faqCollapse20">
+            20. What should I do if I have an issue with my rental car during my trip?
+          </button>
+        </h2>
+        <div id="faqCollapse20" class="accordion-collapse collapse" aria-labelledby="faqHeading20" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            If you encounter any issues during your trip, please contact our 24/7 support line immediately. We will assist you with troubleshooting or arranging necessary repairs.
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
   <!-- Footer Section -->
@@ -428,7 +797,7 @@
         <div class="col-md-7 col-lg-8">
           <p>
             © 2024 Atharv Yadav. All Rights Reserved.
-            <a href="http://localhost:4000/terms-and-conditions" class="text-primary text-decoration-none"><strong>Privacy
+            <a href="https://developeraadesh.wordpress.com/" class="text-primary text-decoration-none"><strong>Privacy
                 Policy</strong></a>
           </p>
         </div>
