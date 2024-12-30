@@ -105,10 +105,18 @@ view.get('/car-details', isAuth, (req, res) => {
     try {
         res.render('cars/car-single', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
-        console.log(err)
+        console.log(err);
         res.status(500).send("Something went wrong: " + err.message);
     }
 });
+
+view.get('/terms-and-conditions', (req, res)=>{
+    try{
+        return res.render('policy/index')
+    }catch(err){
+        return res.status(404).send("404 not found");
+    }
+})
 
 // Password forget
 view.get('/forget-password', (req, res) => {
