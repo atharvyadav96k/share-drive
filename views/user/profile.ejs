@@ -88,7 +88,7 @@
         <div class="container">
             <div class="row">
                 <% cars.forEach((car) => { %>
-                    <% if(car) { %>
+                    <% if(car.car) { %>
                       <div class="col-md-4 col-12" style="margin-bottom: 30px;">
                         <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
   
@@ -109,7 +109,24 @@
                               </div>
                           </div>
                       </div>
-                   <% } %>
+                   <% }else{ %>
+                    <div class="col-md-4 col-12" style="margin-bottom: 30px;">
+                      <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
+
+                            <div class="img rounded d-flex align-items-end" style="background-image: url('https://ehelperteam.com/wp-content/uploads/2019/09/Broken-images.png'); background-position: center; background-size: contain; height: 200px; border-radius: 10px;">
+                            </div>
+                            <div class="text" style="padding: 10px;">
+                                <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
+                                    <a href="" style="color: #333;"> ????? </a>
+                                </h2>
+                                <div class="d-flex mb-3" style="margin-top: 10px;">
+                                    <span class="cat" style="font-size: 14px; color: #777;">?? <br>???</span>
+                                    <p class="price ml-auto" style="font-size: 18px; font-weight: bold;">₹???<span>/day</span><br><span>status: </span><span style="color: white;background-color: black;">??</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%} %> 
                 <% }) %>
             </div>
         </div>        
