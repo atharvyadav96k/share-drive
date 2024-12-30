@@ -87,11 +87,10 @@
         <h1 style="text-align: center; font-size: 36px; margin-bottom: 40px;">Your Requested Cars</h1>
         <div class="container">
             <div class="row">
+              <p><%= cars %></p>
                 <% cars.forEach((car) => { %>
                     <div class="col-md-4 col-12" style="margin-bottom: 30px;">
                       <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
- 
-
                             <div class="text" style="padding: 10px;">
                                 <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
                                     <a href="/car/details/#car" style="color: #333;"></a>
