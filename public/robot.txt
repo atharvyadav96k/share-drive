@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://sharedrive.org.in/sitemap.xml
