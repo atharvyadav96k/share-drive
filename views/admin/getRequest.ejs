@@ -64,15 +64,16 @@
     <div class="row">
       <!-- Loop through users array and display each user's details -->
       <% requests.forEach(req=> { %>
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-header text-center" style="background-color: <%= req.status === 'pending' ? '#ffcd39' : req.status === 'approve' ? '#13653f' : '#b02a37' %>;">
-              <h5>
-                <%= req.car.name %>
-              </h5>
-            </div>
-            <div class="card-body">
-              <div class="info-row"><strong>Name:</strong>
+        <% if(req.car) { %>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <div class="card-header text-center" style="background-color: <%= req.status === 'pending' ? '#ffcd39' : req.status === 'approve' ? '#13653f' : '#b02a37' %>;">
+                <h5>
+                  <%= req.car.name %>
+                </h5>
+              </div>
+              <div class="card-body">
+                <div class="info-row"><strong>Name:</strong>
                 <%= req.name %>
               </div>
               <div class="info-row"><strong>Email:</strong>
@@ -98,6 +99,41 @@
             </div>
           </div>
         </div>
+      <% }else { %>
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-header text-center" style="background-color: black">
+              <h5>
+                ?
+              </h5>
+            </div>
+            <div class="card-body">
+              <div class="info-row"><strong>Name:</strong>
+                ?
+              </div>
+            <div class="info-row"><strong>Email:</strong>
+              ?
+            </div>
+            <div class="info-row"><strong>Phone:</strong>
+              ?
+            </div>
+            <div class="info-row"><strong>Date:</strong>
+              ?
+            </div>
+            <div class="info-row"><strong>Time:</strong>
+              ?
+            </div>
+            <div class="info-row"><strong>Price:</strong>
+              ?
+            </div>
+            <div class="info-row" style="justify-content: space-between;">
+              <a class="btn m-2 btn-danger" href="">Cancel</a>
+              <a class="btn m-2 btn-warning" href="">Pending</a>
+              <a class="btn m-2 btn-success" href="">Approve</a>
+            </div>
+          </div>
+        </div>
+      </div>
         <% }) %>
     </div>
   </div>
