@@ -91,8 +91,9 @@
                     <div class="col-md-4 col-12" style="margin-bottom: 30px;">
                       <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
 
-                            <div class="img rounded d-flex align-items-end" style="background-image: url('<%= car.car.thumbnail %>'); background-position: center; background-size: contain; height: 200px; border-radius: 10px;">
-                            </div>
+                            <!-- <div class="img rounded d-flex align-items-end" style="background-image: url('<%= car.car.thumbnail %>'); background-position: center; background-size: contain; height: 200px; border-radius: 10px;">
+                            </div> -->
+                            <p><%= car.car.thumbnail ? car.car.thumbnail : "" %>  </p>
                             <div class="text" style="padding: 10px;">
                                 <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
                                     <a href="/car/details/<%= car.car._id %>#car" style="color: #333;"> <%= car.car.name %> </a>

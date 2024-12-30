@@ -84,6 +84,7 @@ view.get('/profile/:id', isAuth, async (req, res) => {
                     select: 'name thumbnail pricePerDay Date'
                 }
             });
+        console.log(cars)
         cars = cars?.carRequest || [];
         res.render('user/profile', {
             verified: req.user_verified,
