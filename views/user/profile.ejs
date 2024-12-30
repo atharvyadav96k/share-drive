@@ -87,25 +87,29 @@
         <h1 style="text-align: center; font-size: 36px; margin-bottom: 40px;">Your Requested Cars</h1>
         <div class="container">
             <div class="row">
-              <p><%= cars %></p>
                 <% cars.forEach((car) => { %>
-                    <div class="col-md-4 col-12" style="margin-bottom: 30px;">
-                      <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
-                            <div class="text" style="padding: 10px;">
-                                <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
-                                    <a href="/car/details/#car" style="color: #333;"></a>
-                                </h2>
-                                <div class="d-flex mb-3" style="margin-top: 10px;">
-                                    <span class="cat" style="font-size: 14px; color: #777;"></span>
-                                    <p class="price ml-auto" style="font-size: 18px; font-weight: bold;">₹<span>/day</span><br><span>status: </span><span style="color: black;background-color: ""></span></p>
-                                </div>
-                                <p class="d-flex mb-0 d-block">
-                                    <a href="/car/request#focus" class="btn btn-primary py-2 mr-1" style="background-color: #f96d00; color: white; border-radius: 5px; text-transform: uppercase;">Request Again</a>
-                                    <a href="/car/details#car" class="btn btn-secondary py-2 ml-1" style="background-color: #333; color: white; border-radius: 5px; text-transform: uppercase;">Details</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    <% if(car) { %>
+                      <div class="col-md-4 col-12" style="margin-bottom: 30px;">
+                        <div class="car-wrap rounded ftco-animate" style="border: 1px solid <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>; padding: 15px; border-radius: 10px;">
+  
+                              <div class="img rounded d-flex align-items-end" style="background-image: url('<%= car.car.thumbnail %>'); background-position: center; background-size: contain; height: 200px; border-radius: 10px;">
+                              </div>
+                              <div class="text" style="padding: 10px;">
+                                  <h2 class="mb-0" style="font-size: 20px; font-weight: 600; color: #333;">
+                                      <a href="/car/details/<%= car.car._id %>#car" style="color: #333;"> <%= car.car.name %> </a>
+                                  </h2>
+                                  <div class="d-flex mb-3" style="margin-top: 10px;">
+                                      <span class="cat" style="font-size: 14px; color: #777;"><%= new Date(car.Date).toLocaleDateString('en-IN') %> <br><%= new Date(car.Date).toLocaleTimeString('en-IN') %></span>
+                                      <p class="price ml-auto" style="font-size: 18px; font-weight: bold;">₹<%= car.car.pricePerDay %> <span>/day</span><br><span>status: </span><span style="color: black;background-color: <%= car.status == 'pending' ? 'yellow' : car.status == 'approve' ? 'green' : 'red' %>"><%= car.status %></span></p>
+                                  </div>
+                                  <p class="d-flex mb-0 d-block">
+                                      <a href="/car/request/<%= car.car._id %>#focus" class="btn btn-primary py-2 mr-1" style="background-color: #f96d00; color: white; border-radius: 5px; text-transform: uppercase;">Request Again</a>
+                                      <a href="/car/details/<%= car.car._id %>#car" class="btn btn-secondary py-2 ml-1" style="background-color: #333; color: white; border-radius: 5px; text-transform: uppercase;">Details</a>
+                                  </p>
+                              </div>
+                          </div>
+                      </div>
+                   <% } %>
                 <% }) %>
             </div>
         </div>        
