@@ -91,7 +91,10 @@
           <img style="object-fit: contain; height: 200px;" src="<%= ele.thumbnail %>" class="card-img-top" alt="Car Image">
           <div class="card-body">
             <h5 class="card-title">Car Name: <%= ele.name %></h5>
-            <p class="card-text">Seats: <%= ele.seats %></p>
+            <div style="display: flex; justify-content: space-between;">
+              <h5 class="card-text">Seats: <%= ele.seats %></h5>
+              <h5 class="card-text">Price: <%= ele.pricePerDay %></h5>
+            </div>
             <div style="display: flex; justify-content: space-between;">
               <a href="/car/request/<%= ele._id %>" class="btn btn-primary">Book Now</a>
               <a href="/car/details/<%= ele._id %>" class="btn btn-link">View Details</a>
