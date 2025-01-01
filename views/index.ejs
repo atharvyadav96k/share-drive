@@ -1,828 +1,788 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals</title>
-<meta name="description" content="Looking for affordable and reliable car rentals in Mumbai? ShareDrive offers self-drive and rental cars with options for both driver and self-drive car rental. Book now!">
-<meta name="keywords" content="car rental, Mumbai car rental service, car rental Mumbai, self drive car rental Mumbai, car on rent, car rentals in Mumbai, rental cars, car for rent, self drive cars Mumbai, rental cars for rent">
-<meta name="robots" content="index, follow">
-<link rel="icon" href="/images/favicon.png">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<!-- Add any other required meta tags for Open Graph or Twitter cards -->
-<meta property="og:title" content="Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals">
-<meta property="og:description" content="Find the best self-drive car rental options in Mumbai with ShareDrive. Affordable, well-maintained vehicles for your travel needs. Book now!">
-<meta property="og:image" content="URL_to_image_for_preview">
-<meta property="og:url" content="https://www.shareDrive.com">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals">
-<meta name="twitter:description" content="Looking for affordable and reliable car rentals in Mumbai? ShareDrive offers self-drive and rental cars with options for both driver and self-drive car rental. Book now!">
-<meta name="twitter:image" content="URL_to_image_for_preview">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals</title>
+  <meta name="description" content="Looking for affordable and reliable car rentals in Mumbai? ShareDrive offers self-drive and rental cars with options for both driver and self-drive car rental. Book now!">
+  <meta name="keywords" content="car rental, Mumbai car rental service, car rental Mumbai, self drive car rental Mumbai, car on rent, car rentals in Mumbai, rental cars, car for rent, self drive cars Mumbai, rental cars for rent">
+  <meta name="robots" content="index, follow">
   <link rel="icon" href="/images/favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f8f9fa;
-      color: #343a40;
-    }
-
-    .navbar {
-      background-color: #007bff;
-    }
-
-    h1{
-      color:#0056b3;
-      padding: 10px;
-    }
-    .navbar-brand {
-      font-size: 24px;
-      font-weight: bold;
-    }
-    li h5{
-      color:#3489ff;
-    }
-    .custom-box {
-      max-width: 500px;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      background-color: #ffffff;
-    }
-
-    .custom-header {
-      background-color: #0056b3;
-      color: white;
-      font-weight: bold;
-      padding: 10px;
-      text-align: center;
-    }
-
-    .custom-content {
-      padding: 10px;
-    }
-
-    .form-control,
-    .form-select {
-      border-radius: 5px;
-    }
-
-    .carousel-image {
-      object-fit: cover;
-      max-height: 550px;
-      object-position: center;
-    }
-
-    .horizontal {
-      display: flex;
-      overflow-x: auto;
-      padding-bottom: 10px;
-    }
-
-    .horizontal::-webkit-scrollbar {
-      width: 0px;
-    }
-
-    p{
-      text-align: justify;
-    }
-    .card {
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .btn-primary {
-      background-color: #007bff;
-      border: none;
-    }
-
-    .btn-primary:hover {
-      background-color: #0056b3;
-    }
-
-    footer {
-      background-color: #343a40;
-      color: white;
-    }
-
-    footer a {
-      color: #007bff;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  <!-- Add any other required meta tags for Open Graph or Twitter cards -->
+  <meta property="og:title" content="Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals">
+  <meta property="og:description" content="Find the best self-drive car rental options in Mumbai with ShareDrive. Affordable, well-maintained vehicles for your travel needs. Book now!">
+  <meta property="og:image" content="URL_to_image_for_preview">
+  <meta property="og:url" content="https://www.shareDrive.com">
+  <meta name="twitter:card" content="/images/favicon.png">
+  <meta name="twitter:title" content="Car Rental in Mumbai | ShareDrive - Affordable & Reliable Car Rentals">
+  <meta name="twitter:description" content="Looking for affordable and reliable car rentals in Mumbai? ShareDrive offers self-drive and rental cars with options for both driver and self-drive car rental. Book now!">
+  <meta name="twitter:image" content="/images/favicon.png">
+    <link rel="icon" href="/images/favicon.png">
+  
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="container" style="position: sticky; top: 0; z-index: 100;">
-    <nav class="navbar navbar-expand-lg bg-light text-dark">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
-          <span style="text-transform: uppercase;">Share<span style="color:#007bff">Drive</span></span>
+  <style>
+    *{
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1280px;
+      margin: auto;
+    }
+  </style>
+  <div class="max-w-screen-xl mx-auto">
+    <!-- nav bat -->
+    <div>
+      <nav
+        class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-400 dark:border-gray-600"
+        style="z-index: 50;">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <img src="/images/logo.png" class="h-8" alt="Flowbite Logo">
+            <span class="self-center text-2xl whitespace-nowrap dark:text-white" style="font-weight: 900;">SHARE <span
+                style="color: #1a56db;">DRIVE</span></span>
+          </a>
+          <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <button data-collapse-toggle="navbar-sticky" type="button"
+              class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                viewBox="0 0 17 14">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15" />
+              </svg>
+            </button>
+          </div>
+          <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+            <ul
+              class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <a href="/"
+                  class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  aria-current="page">Home</a>
+              </li>
+              <li>
+                <a href="/about"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+              </li>
+              <li>
+                <a href="/contact-us"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact Us</a>
+              </li>
+              <li>
+                <a href="/login"
+                  class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+
+    <!-- carousel -->
+    <div id="default-carousel" style="margin-top: 70px;" class="relative w-full" data-carousel="slide">
+      <!-- Carousel wrapper -->
+      <div class="relative overflow-hidden rounded-lg" style="aspect-ratio: 16/7;">
+        <!-- Item 1 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/banner/banner.png" class="object-cover w-full h-full" alt="...">
+        </div>
+        <!-- Item 2 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/banner/banner 2ND.png" class="object-cover w-full h-full" alt="...">
+        </div>
+        <!-- Item 3 -->
+        <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <img src="/images/banner/banner 3RD.png" class="object-cover w-full h-full" alt="...">
+        </div>
+      </div>
+      <!-- Slider indicators -->
+      <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1"
+          data-carousel-slide-to="0"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2"
+          data-carousel-slide-to="1"></button>
+        <button type="button" class="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3"
+          data-carousel-slide-to="2"></button>
+      </div>
+      <!-- Slider controls -->
+      <button type="button"
+        class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-prev>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 1 1 5l4 4" />
+          </svg>
+          <span class="sr-only">Previous</span>
+        </span>
+      </button>
+      <button type="button"
+        class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+        data-carousel-next>
+        <span
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <span class="sr-only">Next</span>
+        </span>
+      </button>
+    </div>
+    <!-- quick intro -->
+    <div class="p-2" style="margin-bottom: 5rem;">
+      <h1
+        class="mb-4 text-4xl font-extrabold leading-none text-blue-800 tracking-tight  md:text-5xl lg:text-6xl text-center mt-4">
+        Affordable Car Rental Services in Mumbai
+      </h1>
+      <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400 ">Welcome to
+        Sharedrive, your trusted partner for affordable and reliable car rental in Mumbai. Whether you're searching for
+        a self-drive car rental in Mumbai or a car rental with a driver, we offer flexible and convenient solutions
+        tailored to your needs.</p>
+      <div style="display: flex;justify-content: center;">
+        <a href="/car"
+          class="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900">
+          Let's go
+          <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+            viewBox="0 0 14 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M1 5h12m0 0L9 1m4 4L9 9" />
+          </svg>
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="/services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="/pricing">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary" href="/car">Cars</a>
-            </li>
-            <% if(profile){ %>
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="/profile/<%= profile %>">Profile</a>
-              </li>
-            <% } else { %>
-              <li class="nav-item">
-                <a class="nav-link text-primary" href="/login">Login</a>
-              </li>
-            <% } %>
-          </ul>
-        </div>
       </div>
-    </nav>
-  </div>
-  
-  <div class="container mt-1">
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" style="max-height: 550px; overflow: hidden;">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="/images/banner/banner.png" class="d-block w-100 carousel-image" alt="Slide 1">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/banner/banner 2ND.png" class="d-block w-100 carousel-image" alt="Slide 2">
-        </div>
-        <div class="carousel-item">
-          <img src="/images/banner/banner 3RD.png" class="d-block w-100 carousel-image" alt="Slide 3">
-        </div>
-      </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+
     </div>
-  </div>
-  <div class="container">
-    <h1 >Affordable Car Rental Services in Mumbai – Sharedrive</h1>
-    <p>Welcome to Sharedrive, your trusted partner for affordable and reliable car rental in Mumbai. Whether you're searching for a self-drive car rental in Mumbai or a car rental with a driver, we offer flexible and convenient solutions tailored to your needs.</p>
-  </div>  
-  <div class="container mt-4 mb-4">
-    <div class="custom-box">
-      <div class="custom-header">
-        Search a car for your location
-      </div>
-      <div class="custom-content">
-        <div class="custom-row">
-          <div class="me-1" style="flex: 1;">
-            <label for="location" class="form-label">Location</label>
-            <select id="location" class="form-select" required>
-              <option selected>Select Location</option>
-              <option value="city1">Mumbai</option>
-            </select>
-          </div>
-        </div>
-        <div class="custom-row mt-3">
-          <div class="row">
-            <div style="flex: 1;" class="col-6">
-              <label for="returnDate" class="form-label">Return Date</label>
-              <input type="date" required id="returnDate" class="form-control">
-            </div>
-            
-            <div style="flex: 1;" class="col-6">
-              <label for="pickUpDate" class="form-label">Pick-Up Date</label>
-              <input type="date" id="pickUpDate" required class="form-control">
-            </div>
-          </div>
-          <div style="height: 100%; margin-top: 10px;">
-            <a type="submit" value="search" href="/car" class="btn btn-primary">Search</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="background-color: #E2EEFF;" class="p-2">
-    <div class="container">
-      <h1 class=" text-center mb-4">Discover Amazing Cars</h1>
-      <div class="horizontal d-flex flex-wrap justify-content-start">
-        <% cars.forEach((car) => { %>
-          <div class="card m-2" style="min-width: 250px; width: 18rem; border-radius: 10px; overflow: hidden; height: 240px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <img src="<%= car.thumbnail %>" class="card-img-top" alt="<%= car.name %>" style="height: 150px; object-fit: cover;">
-            <div class="card-body d-flex flex-column justify-content-between" style="color: #2b2f32; font-weight: 600;">
-              <div class="d-flex justify-content-between align-items-center">
-                <span class="d-flex align-items-center">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="#CCC806" width="16" height="16" class="bi bi-car-front" viewBox="0 0 16 16">
-                    <path d="M4 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0m10 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM4.862 4.276 3.906 6.19a.51.51 0 0 0 .497.731c.91-.073 2.35-.17 3.597-.17s2.688.097 3.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 10.691 4H5.309a.5.5 0 0 0-.447.276" />
-                    <path d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM4.82 3a1.5 1.5 0 0 0-1.379.91l-.792 1.847a1.8 1.8 0 0 1-.853.904.8.8 0 0 0-.43.564L1.03 8.904a1.5 1.5 0 0 0-.03.294v.413c0 .796.62 1.448 1.408 1.484 1.555.07 3.786.155 5.592.155s4.037-.084 5.592-.155A1.48 1.48 0 0 0 15 9.611v-.413q0-.148-.03-.294l-.335-1.68a.8.8 0 0 0-.43-.563 1.8 1.8 0 0 1-.853.904l-.792-1 .848A1.5 1.5 0 0 0 11.18 3z" />
-                  </svg>
-                  <span class="ms-1"><%= car.name %></span>
-                </span>
-              </div>
-              <div class="text-muted">
-                <span>Mumbai</span>
-                <br>
-                <a class="text-warning" style="font-size: 12px;" href="/car">More
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8" />
-                  </svg>
+    <!-- cars demo -->
+    <div class="pt-6 px-2" style="margin-bottom: 5rem;">
+      <h1
+        class="text-center mt-4 mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        Discover Amazing <mark class="px-2 text-white bg-blue-600 rounded dark:bg-blue-500">Cars</mark></h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+        <% cars.forEach((ele)=>{ %>
+          <div>
+            <div style="margin: auto;"
+              class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+              <a href="#">
+                <img class="rounded-t-lg h-48 w-full object-cover"
+                  src="<%= ele.thumbnail %>" alt="<%= ele.name %>" />
+              </a>
+              <div class="p-5">
+                <a href="#">
+                  <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                    <%= ele.name %>
+                  </h5>
                 </a>
+                <div class="flex items-center justify-between">
+                  <span class="text-3xl font-bold text-gray-900 dark:text-white">₹<%= ele.pricePerDay %></span>
+                  <a href="/car"
+                    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Explore
+                    Now</a>
+                </div>
               </div>
             </div>
-          </div>
+          </div>  
         <% }) %>
       </div>
     </div>
-  </div>
-  <div class="container">
-    <h1>Your Go-To Mumbai Car Rental Service</h1>
-    <p>At Sharedrive, we simplify travel by providing practical and cost-effective car rental services in Mumbai. Whether you need a car for a short trip, a weekend getaway, or a long-term rental, our wide range of vehicles ensures you’ll find the perfect option. From compact cars for solo travelers to spacious SUVs for families, we’ve got something for everyone. </p>
-    
-  </div>
-  <div class="container mt-1">
-    <h1 class="text-center m-4">Discover Amazing Places</h1>
-    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-          aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-          aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
-          aria-label="Slide 4"></button>
-      </div>
-      <div class="carousel-inner">  
-        <div class="carousel-item active">
-          <img
-            src="./images/banner/banner-PLACE-HERO.png"
-            class="d-block w-100" alt="...">
-          <div class="carousel-caption d-md-block">
-            <!-- <a href="/explore" class="btn btn-primary">let's go</a> -->
-          </div>
+    <!-- how to rent car -->
+    <div class="px-6 px-2" style="margin: auto;">
+      <h1 class="text-5xl text-center font-extrabold dark:text-white mb-4"><small
+          class="ms-2 font-semibold text-blue-500 dark:text-gray-400"></small>How to rent Car</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div>
+          <ol class="relative text-gray-500 border-s border-blue-600 dark:border-gray-700 dark:text-gray-400">
+            <li class="mb-10 ms-6">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-blue-700 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-green-900">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="white" width="16" height="16" fill="currentColor"
+                  class="bi bi-person-circle" viewBox="0 0 16 16">
+                  <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0" />
+                  <path fill-rule="evenodd"
+                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1" />
+                </svg>
+              </span>
+              <h3 class="font-medium leading-tigh text-gray-800" style="font-size: 25px;">Create an Account or Log In
+              </h3>
+              <p class="text-sm">
+              <ul class="max-w-xl space-y-1 text-gray-400 list-disc list-inside dark:text-gray-400">
+                <li>Create new account if you don't have</li>
+                <div class="inline-flex items-center justify-center w-full">
+                  <hr class="w-64 h-px my-2 b g-gray-400 border-0 bg-blue-300">
+                </div>
+                <li>Login in your existing account if you already have</li>
+              </ul>
+              </p>
+            </li>
+            <li class="mb-10 ms-6">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-blue-700 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-car-front-fill"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M2.52 3.515A2.5 2.5 0 0 1 4.82 2h6.362c1 0 1.904.596 2.298 1.515l.792 1.848c.075.175.21.319.38.404.5.25.855.715.965 1.262l.335 1.679q.05.242.049.49v.413c0 .814-.39 1.543-1 1.997V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.338c-1.292.048-2.745.088-4 .088s-2.708-.04-4-.088V13.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-1.892c-.61-.454-1-1.183-1-1.997v-.413a2.5 2.5 0 0 1 .049-.49l.335-1.68c.11-.546.465-1.012.964-1.261a.8.8 0 0 0 .381-.404l.792-1.848ZM3 10a1 1 0 1 0 0-2 1 1 0 0 0 0 2m10 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2M6 8a1 1 0 0 0 0 2h4a1 1 0 1 0 0-2zM2.906 5.189a.51.51 0 0 0 .497.731c.91-.073 3.35-.17 4.597-.17s3.688.097 4.597.17a.51.51 0 0 0 .497-.731l-.956-1.913A.5.5 0 0 0 11.691 3H4.309a.5.5 0 0 0-.447.276L2.906 5.19Z" />
+                </svg>
+              </span>
+              <h3 class="font-medium leading-tight text-gray-800" style="font-size: 25px;">Browse Available Cars</h3>
+              <ul class="max-w-xl space-y-1 text-gray-400 list-disc list-inside dark:text-gray-400">
+                <li>Navigate to the Cars section or use the search bar to find a specific car.</li>
+                <li>Explore the list of available cars, including their features, pricing, and availability.</li>
+              </ul>
+            </li>
+            <li class="mb-10 ms-6">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-blue-700 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-cart-plus"
+                  viewBox="0 0 16 16">
+                  <path d="M9 5.5a.5.5 0 0 0-1 0V7H6.5a.5.5 0 0 0 0 1H8v1.5a.5.5 0 0 0 1 0V8h1.5a.5.5 0 0 0 0-1H9z" />
+                  <path
+                    d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zm3.915 10L3.102 4h10.796l-1.313 7zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0" />
+                </svg>
+              </span>
+              <h3 class="font-medium leading-tight text-gray-800" style="font-size: 25px;">Click on "Request Now"</h3>
+              <ul class="max-w-xl space-y-1 text-gray-400 list-disc list-inside dark:text-gray-400">
+                <li>Once satisfied with the car details, click the Book Now button</li>
+              </ul>
+            </li>
+            <li class="ms-6">
+              <span
+                class="absolute flex items-center justify-center w-8 h-8 bg-blue-700 rounded-full -start-4 ring-4 ring-white dark:ring-gray-900 dark:bg-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-telephone-plus"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z" />
+                  <path fill-rule="evenodd"
+                    d="M12.5 1a.5.5 0 0 1 .5.5V3h1.5a.5.5 0 0 1 0 1H13v1.5a.5.5 0 0 1-1 0V4h-1.5a.5.5 0 0 1 0-1H12V1.5a.5.5 0 0 1 .5-.5" />
+                </svg>
+              </span>
+              <h3 class="font-medium leading-tight text-gray-800" style="font-size: 25px;">Wait for Confirmation</h3>
+              <ul class="max-w-xl space-y-1 text-gray-400 list-disc list-inside dark:text-gray-400">
+                <li>A confirmation message will be displayed, indicating that your request has been submitted</li>
+                <li>Our team will review your booking and connect with you shortly for further assistance and
+                  confirmation
+                </li>
+              </ul>
+            </li>
+          </ol>
         </div>
-        <div class="carousel-item">
-          <img src="./images/banner/banner PLACE.png"
-            class="d-block w-100" alt="...">
-          <div class="carousel-caption d-md-block">
-            <!-- <a href="/explore" class="btn btn-primary">let's go</a> -->
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="./images/banner/banner PLACE 2.png"
-            class="d-block w-100" alt="...">
-          <div class="carousel-caption d-md-block">
-            <!-- <a href="/explore" class="btn btn-primary">let's go</a> -->
-          </div>
-        </div>
-      </div>
-      
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-  </div>
-  <div  style="display: flex;justify-content: center;padding-top: 20px;">
-    <a href="/explore" class="btn btn-primary" style="margin: auto;">let's go</a>
-    </div>
-  <div class="container">
-    <h1>Why Choose Sharedrive for Your Car Rental Needs?</h1>
-    <ul>
-      <li>
-        <h5>
-          Variety of Rental Options
-        </h5>
-        <p>
-          Choose from a diverse fleet that includes compact cars, sedans, and SUVs. Whether you’re looking for self-drive cars in Mumbai or a car rental with a driver, Sharedrive has you covered.
-        </p>
-      </li>
-      <li>
-        <h5>
-          Affordable Prices
-        </h5>
-        <p>
-          We offer competitive and transparent pricing on all our rentals, ensuring you get the best value. Whether you're booking a self-drive car for rent in Mumbai or a car with a driver, you’ll find budget-friendly rates every time.
-        </p>
-      </li>
-      <li>
-        <h5>
-          Convenient Locations
-        </h5>
-        <p>
-          With rental hubs strategically located across the city, finding a car rental near you is easy. Whether you’re at the airport, in the city center, or near your home, we’re just around the corner.
-        </p>
-      </li>
-      <li>
-        <h5>
-          Flexible Rental Periods
-        </h5>
-        <p>
-          Rent a car for a few hours or several days with our flexible plans. From quick errands to long-distance journeys, Sharedrive makes it easy to find the right car for your needs.
-        </p>
-      </li>
-      <li>
-        <h5>
-          Reliable Service
-        </h5>
-        <p>
-          Our vehicles are regularly serviced and well-maintained, ensuring a safe and comfortable experience for every customer.
-        </p>
-      </li>
-      <li>
-        <h5>
-          24/7 Support
-        </h5>
-        <p>
-          Our dedicated team is available around the clock to provide assistance whenever you need it.
-        </p>
-      </li>
-    </ul>
-  </div>
-  
-  <div class="container">
-    <h1>
-      Mumbai Car Rental Options
-    </h1>
-    <ul>
-      <li>
-        <h5>Self-Drive Car Rentals:</h5>
-        <p>Enjoy the freedom to explore at your own pace with our affordable self-drive car rental services in Mumbai.</p>
-      </li>
-      <li>
-        <h5>Car Rental with Driver</h5>
-        <p>Prefer a stress-free ride? Opt for a car rental with a driver in Mumbai for ultimate convenience.</p>
-      </li>
-      <li>
-        <h5>Short-Term and Long-Term Rentals</h5>
-        <p>Whether it’s a day trip or an extended stay, we offer customizable rental plans to suit your schedule.</p>
-      </li>
-    </ul>
-  </div>
-  <div class="container">
-    <h1>How Sharedrive Stands Out</h1>
-    <ul>
-      <li>
-        <h5>Practical Choices:</h5>
-        <p>We focus on affordability and practicality, offering no-frills, budget-friendly car rental services.</p>
-      </li>
-      <li>
-        <h5>Transparent Pricing: </h5>
-        <p>No hidden costs or surprises—just straightforward, honest rates.</p>
-      </li>
-      <li>
-        <h5>Customer-First Approach: </h5>
-        <p>Your convenience and satisfaction are our top priorities.
-        </p>
-      </li>
-    </ul>
-  </div>
-  <div class="container mt-4">
-    <h1 class="text-secondary-emphasis text-center mb-5">Services</h1>
-    <div class="row d-flex" style="justify-content: center;">
-      <div class="col-lg-3 col-md-6 mb-2">
-        <div class="card" style="width: 18rem; margin: auto; border-width: 0px;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; margin: auto; display: flex; justify-content: center; align-items: center;" class="bg-primary">
-            <img src="/images/route.png" style="width: 50px; height: 50px;">
-          </div>
-          <div class="card-body">
-            <p class="card-text fw-bold text-center">Door Step Delivery Available</p>
-            <p class="text-secondary" style="text-align: justify;"> Get your vehicle delivered right to your doorstep, saving time and ensuring a hassle-free experience.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-2">
-        <div class="card" style="width: 18rem; margin: auto; border-width: 0px;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; margin: auto; display: flex; justify-content: center; align-items: center;" class="bg-primary">
-            <img src="/images/google-docs.png" style="width: 50px; height: 50px;">
-          </div>
-          <div class="card-body">
-            <p class="card-text fw-bold text-center">Easy Documentation</p>
-            <p class="text-secondary" style="text-align: justify;">Simple, quick, and minimal paperwork process for seamless and stress-free vehicle rentals or purchases.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-2">
-        <div class="card" style="width: 18rem; margin: auto; border-width: 0px;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; margin: auto; display: flex; justify-content: center; align-items: center;" class="bg-primary">
-            <img src="/images/car-services.png" style="width: 50px; height: 50px;">
-          </div>
-          <div class="card-body">
-            <p class="card-text fw-bold text-center">Well-Maintained Vehicles</p>
-            <p class="text-secondary" style="text-align: justify;"> Enjoy clean, regularly serviced vehicles ensuring comfort, safety, and reliability for every journey.</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6 mb-2">
-        <div class="card" style="width: 18rem; margin: auto; border-width: 0px;">
-          <div style="width: 100px; height: 100px; border-radius: 50%; margin: auto; display: flex; justify-content: center; align-items: center;" class="bg-primary">
-            <img src="/images/infinite-mathematical-symbol.png" style="width: 50px; height: 50px;">
-          </div>
-          <div class="card-body">
-            <p class="card-text fw-bold text-center">Unlimited km</p>
-            <p class="text-secondary" style="text-align: justify;">Drive without restrictions on distance, offering freedom and flexibility for your travels without extra charges.</p>
-          </div>
+        <div style="display: flex; align-items: center;">
+          <img src="/images/cars/Kia.png" alt="">
         </div>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row" style="min-height: 150px;">
-      <div class="col-lg-4 col-12 d-flex justify-content-center" style="height: 150px;background-color: #9CC5FF;">
-        <h1 style="font-size: 80px;" class="text-primary">2</h1>
-        <p class="mt-3" style="font-size: 20px;">Years <br> Experience</p>
-      </div>
-      <div class="col-lg-4 col-12 d-flex justify-content-center" style="height: 150px;">
-        <h1 style="font-size: 80px;" class="text-primary">22</h1>
-        <p class="mt-3" style="font-size: 20px;">Total <br> Cars</p>
-      </div>
-      <div class="col-lg-4 col-12 d-flex justify-content-center" style="height: 150px;">
-        <h1 style="font-size: 80px;" class="text-primary">435</h1>
-        <p class="mt-3" style="font-size: 20px;">Happy <br> Clients</p>
+    <div style="height: 80px; padding: 50px;" id="services"></div>
+    <!-- services -->
+    <div  class="px-2" >
+      <h1 class="text-5xl font-bold mt-6 mb-3 text-center text-blue-800">Services</h1>
+      <div
+        class="grid mb-8 border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 md:mb-12 md:grid-cols-2 bg-white dark:bg-gray-800">
+        <figure
+          class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+          <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <div class="rounded-full w-20 h-20 flex justify-center align-center p-3 bg-blue-700">
+              <img src="/images/route.png" alt="">
+            </div>
+          </blockquote>
+          <figcaption>
+            <h1 class="text-2xl font-bold">Door Step Delivery Available</h1>
+            <p>
+              Get your vehicle delivered right to your doorstep, saving time and ensuring a hassle-free experience.
+            </p>
+          </figcaption>
+        </figure>
+        <figure
+          class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+          <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <div class="rounded-full w-20 h-20 flex justify-center align-center p-4 bg-blue-700">
+              <img src="/images/google-docs.png" alt="">
+            </div>
+          </blockquote>
+          <figcaption>
+            <h1 class="text-2xl font-bold">Easy Documentation</h1>
+            <p>
+              Simple, quick, and minimal paperwork process for seamless and stress-free vehicle rentals or purchases.
+            </p>
+          </figcaption>
+        </figure>
+        <figure
+          class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+          <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <div class="rounded-full w-20 h-20 flex justify-center align-center p-3 bg-blue-700">
+              <img src="/images/car-services.png" alt="">
+            </div>
+          </blockquote>
+          <figcaption>
+            <h1 class="text-2xl font-bold">Well-Maintained Vehicles</h1>
+            <p>
+              Enjoy clean, regularly serviced vehicles ensuring comfort, safety, and reliability for every journey.
+            </p>
+          </figcaption>
+        </figure>
+        <figure
+          class="flex flex-col items-center justify-center p-8 text-center bg-white border-b border-gray-200 rounded-t-lg md:rounded-t-none md:rounded-ss-lg md:border-e dark:bg-gray-800 dark:border-gray-700">
+          <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
+            <div class="rounded-full w-20 h-20 flex justify-center align-center p-3 bg-blue-700">
+              <img src="/images/infinite-mathematical-symbol.png" alt="">
+            </div>
+          </blockquote>
+          <figcaption>
+            <h1 class="text-2xl font-bold">Unlimited km</h1>
+            <p>
+              Drive without restrictions on distance, offering freedom and flexibility for your travels without extra
+              charges.
+            </p>
+          </figcaption>
+        </figure>
       </div>
     </div>
-  </div>
-  <!-- faq -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4">Frequently Asked Questions (FAQs) – Sharedrive Car Rental in Mumbai</h2>
-    <div class="accordion" id="faqAccordion">
-      
-      <!-- FAQ 1 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading1">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
-            1. What types of cars are available for rent in Mumbai?
-          </button>
-        </h2>
-        <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            At Sharedrive, we offer a wide range of vehicles, including compact cars, sedans, and SUVs. Whether you’re looking for a self-drive car rental in Mumbai or a car with a driver, we have options to suit your needs.
-          </div>
+    <!-- Why choose us -->
+    <div class="pt-6 px-2" style="margin-bottom: 5rem;">
+      <h1 style="margin-top: 5rem;"
+        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        Why Choose <span
+          class="underline underline-offset-3 decoration-8 decoration-blue-400 dark:decoration-blue-600">SHAREDRIVE</span>
+        for Your Car Rental Needs?</h1>
+      <div class="grid grid-cols-1 sm:grid-cols-2">
+        <div style="display: flex; align-items: center">
+          <img style="width: 100%" src="/images/cars/Punch.png" alt="" style="background-color: red;">
         </div>
-      </div>
-
-      <!-- FAQ 2 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading2">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
-            2. Can I rent a car in Mumbai for self-drive?
-          </button>
-        </h2>
-        <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes! We provide affordable and convenient self-drive car rental services in Mumbai. Explore the city or go on a road trip with the freedom and flexibility of driving yourself.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 3 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading3">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
-            3. Are there cars available for rent with a driver?
-          </button>
-        </h2>
-        <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Absolutely! If you prefer not to drive, we offer car rental services in Mumbai with a driver for a hassle-free experience.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 4 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading4">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
-            4. How do I book a car rental near me?
-          </button>
-        </h2>
-        <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Booking is easy with Sharedrive. Simply visit our website, browse our fleet, choose your preferred vehicle, and complete the booking process. We have rental hubs across Mumbai to ensure convenience.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 5 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading5">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse5" aria-expanded="false" aria-controls="faqCollapse5">
-            5. What are the rental options for car rentals in Mumbai?
-          </button>
-        </h2>
-        <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            We offer flexible rental plans, including hourly, daily, and long-term rentals. Whether you need a car for a quick trip or an extended journey, we have options tailored to your schedule.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 6 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading6">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse6" aria-expanded="false" aria-controls="faqCollapse6">
-            6. Is there a minimum age requirement for renting a car in Mumbai?
-          </button>
-        </h2>
-        <div id="faqCollapse6" class="accordion-collapse collapse" aria-labelledby="faqHeading6" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, renters must be at least 21 years old to book a self-drive car for rent with Sharedrive. A valid driving license is also required.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 7 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading7">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse7" aria-expanded="false" aria-controls="faqCollapse7">
-            7. Are there any hidden charges for car rentals?
-          </button>
-        </h2>
-        <div id="faqCollapse7" class="accordion-collapse collapse" aria-labelledby="faqHeading7" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            No. We maintain complete transparency with our pricing. The rental cost includes all applicable fees, and there are no hidden charges.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 8 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading8">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse8" aria-expanded="false" aria-controls="faqCollapse8">
-            8. Can I rent a car in Mumbai without a credit card?
-          </button>
-        </h2>
-        <div id="faqCollapse8" class="accordion-collapse collapse" aria-labelledby="faqHeading8" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, we offer flexible payment options, including debit cards and UPI, to make the booking process easier for everyone.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 9 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading9">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse9" aria-expanded="false" aria-controls="faqCollapse9">
-            9. What documents are required for renting a car?
-          </button>
-        </h2>
-        <div id="faqCollapse9" class="accordion-collapse collapse" aria-labelledby="faqHeading9" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            For self-drive car rentals, you’ll need a valid driving license, a government-issued ID, and proof of address. For rentals with a driver, only a valid ID is required.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 10 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading10">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse10" aria-expanded="false" aria-controls="faqCollapse10">
-            10. Do you offer roadside assistance?
-          </button>
-        </h2>
-        <div id="faqCollapse10" class="accordion-collapse collapse" aria-labelledby="faqHeading10" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, we provide 24/7 roadside assistance to ensure your journey is stress-free.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 11 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading11">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse11" aria-expanded="false" aria-controls="faqCollapse11">
-            11. How are self-drive cars maintained for safety?
-          </button>
-        </h2>
-        <div id="faqCollapse11" class="accordion-collapse collapse" aria-labelledby="faqHeading11" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            All our vehicles undergo regular maintenance and thorough inspections to ensure they are safe and reliable.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 12 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading12">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse12" aria-expanded="false" aria-controls="faqCollapse12">
-            12. Is fuel included in the rental price?
-          </button>
-        </h2>
-        <div id="faqCollapse12" class="accordion-collapse collapse" aria-labelledby="faqHeading12" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            No, fuel is not included in the rental price. You will be required to return the car with the same amount of fuel as when you received it.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 13 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading13">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse13" aria-expanded="false" aria-controls="faqCollapse13">
-            13. Can I extend my car rental period?
-          </button>
-        </h2>
-        <div id="faqCollapse13" class="accordion-collapse collapse" aria-labelledby="faqHeading13" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, extensions are possible depending on availability. Please contact our support team in advance to extend your booking.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 14 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading14">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse14" aria-expanded="false" aria-controls="faqCollapse14">
-            14. What should I do in case of an accident while renting a car?
-          </button>
-        </h2>
-        <div id="faqCollapse14" class="accordion-collapse collapse" aria-labelledby="faqHeading14" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            In the event of an accident, please ensure your safety first, contact the police, and then inform us immediately for further instructions. Roadside assistance will be available as well.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 15 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading15">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse15" aria-expanded="false" aria-controls="faqCollapse15">
-            15. Can I rent a car for a one-way trip?
-          </button>
-        </h2>
-        <div id="faqCollapse15" class="accordion-collapse collapse" aria-labelledby="faqHeading15" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, one-way rentals are available. Please inform us in advance about your drop-off location so that we can make the necessary arrangements.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 16 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading16">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse16" aria-expanded="false" aria-controls="faqCollapse16">
-            16. What if I return the car late?
-          </button>
-        </h2>
-        <div id="faqCollapse16" class="accordion-collapse collapse" aria-labelledby="faqHeading16" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Late returns may incur additional charges based on the number of hours or days the car is overdue. Please notify us if you anticipate a delay.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 17 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading17">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse17" aria-expanded="false" aria-controls="faqCollapse17">
-            17. Can I rent a car for a road trip outside Mumbai?
-          </button>
-        </h2>
-        <div id="faqCollapse17" class="accordion-collapse collapse" aria-labelledby="faqHeading17" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Yes, you can rent a car for road trips outside Mumbai. Just inform us in advance and ensure you follow the guidelines for intercity rentals.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 18 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading18">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse18" aria-expanded="false" aria-controls="faqCollapse18">
-            18. How do I cancel my car rental reservation?
-          </button>
-        </h2>
-        <div id="faqCollapse18" class="accordion-collapse collapse" aria-labelledby="faqHeading18" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            Cancellations can be made through our website or by contacting our customer support team. Cancellation policies may apply depending on the timing.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 19 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading19">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse19" aria-expanded="false" aria-controls="faqCollapse19">
-            19. How do I contact customer support for my rental car?
-          </button>
-        </h2>
-        <div id="faqCollapse19" class="accordion-collapse collapse" aria-labelledby="faqHeading19" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            You can reach our customer support team through email, phone, or the contact form on our website for any inquiries or assistance.
-          </div>
-        </div>
-      </div>
-
-      <!-- FAQ 20 -->
-      <div class="accordion-item">
-        <h2 class="accordion-header" id="faqHeading20">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse20" aria-expanded="false" aria-controls="faqCollapse20">
-            20. What should I do if I have an issue with my rental car during my trip?
-          </button>
-        </h2>
-        <div id="faqCollapse20" class="accordion-collapse collapse" aria-labelledby="faqHeading20" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            If you encounter any issues during your trip, please contact our 24/7 support line immediately. We will assist you with troubleshooting or arranging necessary repairs.
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!-- Footer Section -->
-  <footer class="bg-dark text-white pt-5 pb-4">
-    <div class="container text-center text-md-start">
-      <div class="row text-center text-md-start">
-        <!-- About Us -->
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">About Us</h5>
-          <p>
-            Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.
-          </p>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quick Links</h5>
-          <p><a href="#" class="text-white text-decoration-none">Home</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Services</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
-        </div>
-
-        <!-- Contact Information -->
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
-          <p><i class="fas fa-home mr-3"></i>Subhash Nagar, Chembur, Mumbai- 400071</p>
-          <p><i class="fas fa-envelope mr-3"></i>sharedrivee1@gmail.com</p>
-          <p><i class="fas fa-phone mr-3"></i> 9004988983</p>
-        </div>
-
-        <!-- Social Media Links -->
-        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Follow Us</h5>
-          <a href="#" class="btn btn-primary" style="background-color: #ac2bac;" role="button">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
-              <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-
-      <!-- Horizontal Line -->
-      <hr class="mb-4" />
-
-      <!-- Copyright -->
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-7 col-lg-8">
-          <p>
-            © 2024 Atharv Yadav. All Rights Reserved.
-            <a href="https://developeraadesh.wordpress.com/" class="text-primary text-decoration-none"><strong>Privacy
-                Policy</strong></a>
-          </p>
+        <div>
+          <dl class="max-w-xl text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">Variety of Rental Options</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                Choose from a diverse fleet that includes compact cars, sedans, and SUVs.
+                Whether you’re looking for self-drive cars in Mumbai or a car rental with a driver, Sharedrive has you
+                covered.
+              </dt>
+            </div>
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">Affordable Prices</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                We offer competitive and transparent pricing on all our rentals, ensuring you get the best value.
+                Whether
+                you're booking a self-drive car for rent in Mumbai or a car with a driver, you’ll find budget-friendly
+                rates
+                every time.
+              </dt>
+            </div>
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">Convenient Locations</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                With rental hubs strategically located across the city, finding a car rental near you is easy. Whether
+                you’re at the airport, in the city center, or near your home, we’re just around the corner.
+              </dt>
+            </div>
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">Flexible Rental Periods</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                Rent a car for a few hours or several days with our flexible plans. From quick errands to long-distance
+                journeys, Sharedrive makes it easy to find the right car for your needs.
+              </dt>
+            </div>
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">Reliable Service</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                Our vehicles are regularly serviced and well-maintained, ensuring a safe and comfortable experience for
+                every customer.
+              </dt>
+            </div>
+            <div class="flex flex-col pb-3">
+              <dd class="text-lg font-semibold">24/7 Support</dd>
+              <dt class="mb-1 text-gray-500 md:text-lg dark:text-gray-400">
+                Our dedicated team is available around the clock to provide assistance whenever you need it.
+              </dt>
+            </div>
+          </dl>
         </div>
       </div>
     </div>
-  </footer>
+    <!-- Mumbai Car Rental Options -->
+    <div class="pt-6 px-2">
+      <h1 class="text-5xl font-extrabold text-blue-700 text-center mb-4">Mumbai Car Rental Options</h1>
+      <dl class="max-w-xl text-gray-900 divide-y divide-gray-200 dark:text-white dark:divide-gray-700">
+        <div class="flex flex-col pb-3">
+          <dd class="text-lg font-semibold text-blue-700">Self-Drive Car Rentals</dd>
+          <dt class="mb-1 text-blue-500 md:text-lg dark:text-gray-400">
+            Enjoy the freedom to explore at your own pace with our affordable self-drive car rental services in Mumbai.
+          </dt>
+        </div>
+        <div class="flex flex-col pb-3">
+          <dd class="text-lg font-semibold text-blue-700">Car Rental with Driver</dd>
+          <dt class="mb-1 text-blue-500 md:text-lg dark:text-gray-400">
+            Prefer a stress-free ride? Opt for a car rental with a driver in Mumbai for ultimate convenience.
+          </dt>
+        </div>
+        <div class="flex flex-col pb-3">
+          <dd class="text-lg font-semibold text-blue-700">Short-Term and Long-Term Rentals</dd>
+          <dt class="mb-1 text-blue-500 md:text-lg dark:text-gray-400">
+            Whether it’s a day trip or an extended stay, we offer customizable rental plans to suit your schedule.
+          </dt>
+        </div>
+      </dl>
+    </div>
+    <!-- FAQ -->
+    <div class="pt-6 px-2">
+      <h1
+        class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+        Frequently asked question</h1>
+      <div class="p-4 bg-white rounded-lg dark:bg-gray-800" id="faq" role="tabpanel" aria-labelledby="faq-tab">
+        <div id="accordion-flush" data-accordion="collapse"
+          data-active-classes="bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+          data-inactive-classes="text-gray-500 dark:text-gray-400">
+          <h2 id="accordion-flush-heading-1">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-700 border-b border-blue-200"
+              data-accordion-target="#accordion-flush-body-1" aria-expanded="true"
+              aria-controls="accordion-flush-body-1">
+              <span>What types of cars are available for rent in Mumbai?</span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-1" class="hidden" aria-labelledby="accordion-flush-heading-1">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">At Sharedrive, we offer a wide range of vehicles,
+                including compact cars, sedans, and SUVs. Whether you’re looking for a self-drive car rental in Mumbai
+                or a car with a driver, we have options to suit your needs.</p>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-2">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-2" aria-expanded="false"
+              aria-controls="accordion-flush-body-2">
+              <span>Can I rent a car in Mumbai for self-drive?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-2" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Yes! We provide affordable and convenient self-drive car
+                rental services in Mumbai. Explore the city or go on a road trip with the freedom and flexibility of
+                driving yourself.</p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-3">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-3" aria-expanded="false"
+              aria-controls="accordion-flush-body-3">
+              <span>Are there cars available for rent with a driver?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-3" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Absolutely! If you prefer not to drive, we offer car
+                rental services in Mumbai with a driver for a hassle-free experience.</p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-4">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-4" aria-expanded="false"
+              aria-controls="accordion-flush-body-4">
+              <span>How do I book a car rental near me?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-4" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Booking is easy with Sharedrive. Simply visit our
+                website, browse our fleet, choose your preferred vehicle, and complete the booking process. We have
+                rental hubs across Mumbai to ensure convenience.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-5">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-5" aria-expanded="false"
+              aria-controls="accordion-flush-body-5">
+              <span>What are the rental options for car rentals in Mumbai?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-5" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">We offer flexible rental plans, including hourly, daily,
+                and long-term rentals. Whether you need a car for a quick trip or an extended journey, we have options
+                tailored to your schedule.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-6">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-6" aria-expanded="false"
+              aria-controls="accordion-flush-body-6">
+              <span>Is there a minimum age requirement for renting a car in Mumbai?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-6" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Yes, renters must be at least 21 years old to book a
+                self-drive car for rent with Sharedrive. A valid driving license is also required.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-7">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-7" aria-expanded="false"
+              aria-controls="accordion-flush-body-7">
+              <span>Are there any hidden charges for car rentals?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-7" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">No. We maintain complete transparency with our pricing.
+                The rental cost includes all applicable fees, and there are no hidden charges.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-8">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-8" aria-expanded="false"
+              aria-controls="accordion-flush-body-8">
+              <span>Can I rent a car in Mumbai without a credit card?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-8" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">
+                Yes, we offer flexible payment options, including debit cards and UPI, to make the booking process
+                easier for everyone.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-9">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-9" aria-expanded="false"
+              aria-controls="accordion-flush-body-9">
+              <span>What documents are required for renting a car?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-9" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">For self-drive car rentals, you’ll need a valid driving
+                license, a government-issued ID, and proof of address. For rentals with a driver, only a valid ID is
+                required.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-10">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-10" aria-expanded="false"
+              aria-controls="accordion-flush-body-10">
+              <span>How are self-drive cars maintained for safety?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-10" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">All our vehicles undergo regular maintenance and thorough
+                inspections to ensure they are safe and reliable.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-11">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-11" aria-expanded="false"
+              aria-controls="accordion-flush-body-11">
+              <span> What should I do in case of an accident while renting a car?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-11" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">In the event of an accident, please ensure your safety
+                first, contact the police, and then inform us immediately for further instructions. Roadside assistance
+                will be available as well. </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-12">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-12" aria-expanded="false"
+              aria-controls="accordion-flush-body-12">
+              <span>What should I do if I have an issue with my rental car during my trip?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-12" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">If you encounter any issues during your trip, please
+                contact our 24/7 support line immediately. We will assist you with troubleshooting or arranging
+                necessary repairs.
+              </p>
+            </div>
+          </div>
+          <h2 id="accordion-flush-heading-14">
+            <button type="button"
+              class="flex items-center justify-between w-full py-5 font-medium text-left rtl:text-right text-gray-800 border-b border-gray-200 dark:border-gray-700 dark:text-gray-400"
+              data-accordion-target="#accordion-flush-body-14" aria-expanded="false"
+              aria-controls="accordion-flush-body-14">
+              <span>Can I extend my car rental period?
+              </span>
+              <svg data-accordion-icon class="w-3 h-3 rotate-180 shrink-0" aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 5 5 1 1 5" />
+              </svg>
+            </button>
+          </h2>
+          <div id="accordion-flush-body-14" class="hidden" aria-labelledby="accordion-flush-heading-2">
+            <div class="py-5 border-b border-gray-200 dark:border-gray-700">
+              <p class="mb-2 text-gray-500 dark:text-gray-400">Yes, extensions are possible depending on availability.
+                Please contact our support team in advance to extend your booking.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer -->
+    <footer class="bg-gray-900 dark:bg-gray-900">
+      <div class="mx-auto w-full max-w-screen-xl">
+        <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">About Us</h2>
+            <p class="text-white">Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.</p>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Quick Links</h2>
+            <ul class="text-white dark:text-white font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Home</a>
+              </li>
+              <li class="mb-4">
+                <a href="/about" class="hover:underline">About</a>
+              </li>
+              <li class="mb-4">
+                <a href="/car" class="hover:underline">Cars</a>
+              </li>
+              <li class="mb-4">
+                <a href="/contact" class="hover:underline">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Contact</h2>
+            <ul class="text-white dark:text-white font-medium">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Subhash Nagar, Chembur, Mumbai- 400071</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">sharedrivee1@gmail.com</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">9004988983</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Legal</h2>
+            <ul class="text-white dark:text-white font-medium">
+              <li class="mb-4">
+                <a href="/terms-and-conditions" class="hover:underline">Terms & Conditions</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <hr>
+        <div class="px-4 py-6 bg-gray dark:bg-white md:flex md:items-center md:justify-between">
+          <span class="text-sm text-white dark:text-white sm:text-center">© 2024 <a
+              href="https://developeraadesh.wordpress.com/">DEVELOPERAADESH™</a>. All Rights Reserved.
+          </span>
+          <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+            <a href="https://www.instagram.com/sharedrive_/profilecard/?igsh=MW9hcnYwczFsOGN2cw%3D%3D" class="text-white hover:text-white dark:hover:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+              </svg>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
