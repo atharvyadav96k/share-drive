@@ -104,24 +104,52 @@
             </nav>
         </div>
         <!-- cars demo -->
+        <style>
+            .active-btn {
+                background-color: #1d4ed8; /* Blue */
+                color: white;
+            }
+        </style>
+        
         <div class="pt-6 px-2" style="margin-top: 3rem;">
             <!-- Filter Buttons -->
-            <div class="flex space-x-4 mb-4">
-                <button id="btn-all" onclick="filterBySeats('all', 'btn-all')" class="active-btn px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
-                    All
-                </button>
-                <% const uniqueSeats = [...new Set(cars.map(car => car.seats))]; %>
-                <% uniqueSeats.forEach(seat => { %>
-                    <button id="btn-<%= seat %>" onclick="filterBySeats('<%= seat %>', 'btn-<%= seat %>')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
-                        <%= seat %> Seater
+            <div class="mb-4">
+                <h3 class="text-lg font-bold">Filter by Seats</h3>
+                <div class="flex space-x-4">
+                    <button id="btn-all-seats" onclick="filterBySeats('all', 'btn-all-seats')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        All
                     </button>
-                <% }) %>
+                    <% const uniqueSeats = [...new Set(cars.map(car => car.seats))]; %>
+                    <% uniqueSeats.forEach(seat => { %>
+                        <button id="btn-<%= seat %>" onclick="filterBySeats('<%= seat %>', 'btn-<%= seat %>')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            <%= seat %> Seater
+                        </button>
+                    <% }) %>
+                </div>
+            </div>
+        
+            <div class="mb-4">
+                <h3 class="text-lg font-bold">Filter by Price</h3>
+                <div class="flex space-x-4">
+                    <button id="btn-all-price" onclick="filterByPrice('all', 'btn-all-price')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        All
+                    </button>
+                    <button id="btn-low" onclick="filterByPrice('low', 'btn-low')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        ₹0 - ₹2000
+                    </button>
+                    <button id="btn-medium" onclick="filterByPrice('medium', 'btn-medium')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        ₹2001 - ₹5000
+                    </button>
+                    <button id="btn-high" onclick="filterByPrice('high', 'btn-high')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        ₹5000+
+                    </button>
+                </div>
             </div>
         
             <!-- Cars Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="cars-container">
                 <% cars.forEach((car) => { %>
-                    <div class="car-card seaters-<%= car.seats %>">
+                    <div class="car-card seaters-<%= car.seats %>" data-price="<%= car.pricePerDay %>">
                         <div style="margin: auto;" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <a href="#">
                                 <img class="rounded-t-lg h-48 w-full object-cover" src="<%= car.thumbnail %>" alt="<%= car.name %>" />
@@ -146,22 +174,44 @@
                 <% }) %>
             </div>
         </div>
+        
         <script>
+            // Active filter buttons for seats
             function filterBySeats(seatCount, buttonId) {
-                // Filter cars by seats
                 const allCars = document.querySelectorAll('.car-card');
                 allCars.forEach(car => {
                     car.style.display = seatCount === 'all' || car.classList.contains(`seaters-${seatCount}`) ? 'block' : 'none';
                 });
         
-                // Highlight the active button
-                const allButtons = document.querySelectorAll('.flex button');
-                allButtons.forEach(button => button.classList.remove('active-btn'));
+                const allSeatButtons = document.querySelectorAll('#btn-all-seats, [id^="btn-"]');
+                allSeatButtons.forEach(button => button.classList.remove('active-btn'));
+                document.getElementById(buttonId).classList.add('active-btn');
+            }
         
-                // Add active class to the clicked button
+            // Active filter buttons for price
+            function filterByPrice(priceRange, buttonId) {
+                const allCars = document.querySelectorAll('.car-card');
+                allCars.forEach(car => {
+                    const price = parseInt(car.getAttribute('data-price'), 10);
+                    if (priceRange === 'all') {
+                        car.style.display = 'block';
+                    } else if (priceRange === 'low' && price <= 2000) {
+                        car.style.display = 'block';
+                    } else if (priceRange === 'medium' && price > 2000 && price <= 5000) {
+                        car.style.display = 'block';
+                    } else if (priceRange === 'high' && price > 5000) {
+                        car.style.display = 'block';
+                    } else {
+                        car.style.display = 'none';
+                    }
+                });
+        
+                const allPriceButtons = document.querySelectorAll('#btn-all-price, #btn-low, #btn-medium, #btn-high');
+                allPriceButtons.forEach(button => button.classList.remove('active-btn'));
                 document.getElementById(buttonId).classList.add('active-btn');
             }
         </script>
+        
         
 
         <!-- footer -->
