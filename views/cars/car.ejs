@@ -1,130 +1,210 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShareDrive Cars</title>
-  <link rel="icon" href="/images/favicon.png">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <style>
-    body {
-      background-color: #f1f1f1;
-    }
-
-    .filter-container {
-      background: #fff;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-      margin-bottom: 20px;
-    }
-
-    .filter-container label {
-		cursor: pointer;
-    }
-
-    .filter-btn {
-      background-color: #1871e3;
-      color: white;
-      border: none;
-      border-radius: 20px;
-      padding: 5px 15px;
-      margin: 5px;
-    }
-
-    .filter-btn.active {
-      background-color: #000;
-    }
-
-    .card {
-      width: 100%;
-      box-shadow: 1px 1px 10px 1px #e1e1e1;
-      border: none;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.png">
+    <title>Share Drive - Self-Drive Car Rentals in Mumbai | Affordable Car Rental Services</title>
+    <meta name="description"
+        content="Share Drive offers the best car rental services in Mumbai, including self-drive car rentals, cars with drivers, and flexible rental plans. Rent a car near you today!" />
+    <meta name="keywords"
+        content="car rental Mumbai, Mumbai car rental service, self drive car rental Mumbai, car on rent, car rentals, rental cars for rent, self drive cars in Mumbai, car rent Mumbai, car rental near me, car rental services, car rent, self drive cars, car for rent in Mumbai" />
+    <meta name="author" content="Share Drive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.share-drive.com/car">
+    <meta property="og:title" content="Share Drive - Self-Drive & Chauffeur Car Rentals in Mumbai">
+    <meta property="og:description"
+        content="Explore self-drive car rentals or hire cars with drivers in Mumbai with Share Drive. Affordable and flexible car rental options to meet your needs." />
+    <meta property="og:url" content="https://www.share-drive.com/car">
+    <meta property="og:image" content="https://www.sharedrive.org.in/uploads/thumb-1735235939481-new%20balenoo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="https://www.sharedrive.org.in/uploads/thumb-1735235939481-new%20balenoo.jpg">
+    <meta name="twitter:title" content="Share Drive - Car Rentals in Mumbai">
+    <meta name="twitter:description"
+        content="Affordable car rentals in Mumbai! Choose Share Drive for self-drive cars, chauffeur-driven options, and more." />
+    <meta name="twitter:image" content="https://www.sharedrive.org.in/images/banner/banner.png">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-  <div class="container" style="position: sticky; top: 0px; z-index: 100;">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
-          <strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;">
-            <span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span>
-          </strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/about">About</a></li>
-            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/services">Services</a></li>
-            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/pricing">Pricing</a></li>
-            <li class="nav-item"><a class="nav-link text-primary fw-semibold" href="/car">Cars</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
-
-  <div class="container">
-	<div class="container filter-container mt-2">
-		<h5>Filter Cars</h5>
-		<button class="filter-btn" onclick="filterCars('5')">5 Seats</button>
-		<button class="filter-btn" onclick="filterCars('7')">7 Seats</button>
-		<button class="filter-btn" onclick="filterCars('all')">All</button>
-	  </div>
-  </div>
-
-  <div class="container mt-3">
-    <div class="row" id="cars-container">
-      <% cars.forEach((ele) => { %>
-      <div class="col-lg-4 col-md-6 mt-2 seats-<%= ele.seats %>">
-        <div class="card" style="margin: auto;">
-          <img style="object-fit: contain; height: 200px;" src="<%= ele.thumbnail %>" class="card-img-top" alt="Car Image">
-          <div class="card-body">
-            <h5 class="card-title">Car Name: <%= ele.name %></h5>
-            <div style="display: flex; justify-content: space-between;">
-              <h5 class="card-text">Seats: <%= ele.seats %></h5>
-              <h5 class="card-text">Price: <%= ele.pricePerDay %></h5>
-            </div>
-            <div style="display: flex; justify-content: space-between;">
-              <a href="/car/request/<%= ele._id %>" class="btn btn-primary">Book Now</a>
-              <a href="/car/details/<%= ele._id %>" class="btn btn-link">View Details</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <% }) %>
-    </div>
-  </div>
-
-  <script>
-    function filterCars(seats) {
-      const allCards = document.querySelectorAll('[class*="seats-"]');
-      allCards.forEach(card => {
-        if (seats === 'all' || card.classList.contains(`seats-${seats}`)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
+    <style>
+        * {
+            scroll-behavior: smooth;
         }
-      });
 
-      const buttons = document.querySelectorAll('.filter-btn');
-      buttons.forEach(btn => btn.classList.remove('active'));
-      document.querySelector(`.filter-btn[onclick*="${seats}"]`).classList.add('active');
-    }
-  </script>
+        .container {
+            max-width: 1280px;
+            margin: auto;
+        }
+    </style>
+    <div class="max-w-screen-xl mx-auto">
+        <!-- nav bat -->
+        <div>
+            <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-400 dark:border-gray-600"
+                style="z-index: 50;">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="/images/logo.png" class="h-8" alt="ShareDrive">
+                        <span class="self-center text-2xl whitespace-nowrap dark:text-white"
+                            style="font-weight: 900;">SHARE <span style="color: #1a56db;">DRIVE</span></span>
+                    </a>
+                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                        id="navbar-sticky">
+                        <ul
+                            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li>
+                                <a href="/"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="/about"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                            </li>
+                            <li>
+                                <a href="/car"
+                                    class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">Cars</a>
+                            </li>
+                            <li>
+                                <a href="/contact-us"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact
+                                    Us</a>
+                            </li>
+                            <% if(profile){ %>
+                                <li>
+                                    <a href="/profile/<%= profile %>"
+                                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
+                                </li>
+                                <% }else{ %>
+                                    <li>
+                                        <a href="/login"
+                                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+                                    </li>
+                                    <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- cars demo -->
+        <div class="pt-6 px-2" style="margin-top: 3rem;">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <% cars.forEach((car)=>{ %>
+                  <div>
+                    <div style="margin: auto;"
+                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+                        <a href="#">
+                            <img class="rounded-t-lg h-48 w-full object-cover"
+                                src="<%= car.thumbnail %>"
+                                alt="<%= car.name %>" />
+                        </a>
+                        <div class="p-5">
+                            <a href="#">
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                  <%= car.name %>
+                                </h5>
+                            </a>
+                            <div class="flex items-center justify-between">
+                                <span class="text-2xl font-semibold text-gray-900 dark:text-white">₹<%= car.pricePerDay %></span>
+                                <span class="text-2xl font-semibold text-gray-900 dark:text-white"><%= car.seats %> Seater</span>
+                            </div>
+                            <div class="flex mt-3">
+                                <a href="/car/request/<%= car._id %>"
+                                    class="flex-1 px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Book
+                                    Now</a>
+                                <a href="/car/details/<%= car._id %>"
+                                    class="flex-1 text-center py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+            </div>
+        </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+        <!-- footer -->
+        <footer class="bg-gray-900 dark:bg-gray-900 mt-3">
+            <div class="mx-auto w-full max-w-screen-xl">
+                <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">About Us</h2>
+                        <p class="text-white">Sharedrive – Where every journey begins with trust, comfort, and endless
+                            possibilities.</p>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Quick Links</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Home</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/about" class="hover:underline">About</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/car" class="hover:underline">Cars</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/contact" class="hover:underline">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Contact</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Subhash Nagar, Chembur, Mumbai- 400071</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">sharedrivee1@gmail.com</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">9004988983</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Legal</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="/terms-and-conditions" class="hover:underline">Terms & Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-4 py-6 bg-gray dark:bg-white md:flex md:items-center md:justify-between">
+                    <span class="text-sm text-white dark:text-white sm:text-center">© 2024 <a
+                            href="https://developeraadesh.wordpress.com/">DEVELOPERAADESH™</a>. All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+                        <a href="https://www.instagram.com/sharedrive_/profilecard/?igsh=MW9hcnYwczFsOGN2cw%3D%3D"
+                            class="text-white hover:text-white dark:hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
