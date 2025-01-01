@@ -37,6 +37,10 @@
             max-width: 1280px;
             margin: auto;
         }
+        .active-btn {
+        background-color: #1d4ed8; /* Blue */
+        color: white;
+    }
     </style>
     <div class="max-w-screen-xl mx-auto">
         <!-- nav bat -->
@@ -101,40 +105,64 @@
         </div>
         <!-- cars demo -->
         <div class="pt-6 px-2" style="margin-top: 3rem;">
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                <% cars.forEach((car)=>{ %>
-                  <div>
-                    <div style="margin: auto;"
-                        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-                        <a href="#">
-                            <img class="rounded-t-lg h-48 w-full object-cover"
-                                src="<%= car.thumbnail %>"
-                                alt="<%= car.name %>" />
-                        </a>
-                        <div class="p-5">
+            <!-- Filter Buttons -->
+            <div class="flex space-x-4 mb-4">
+                <button id="btn-all" onclick="filterBySeats('all', 'btn-all')" class="active-btn px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                    All
+                </button>
+                <% const uniqueSeats = [...new Set(cars.map(car => car.seats))]; %>
+                <% uniqueSeats.forEach(seat => { %>
+                    <button id="btn-<%= seat %>" onclick="filterBySeats('<%= seat %>', 'btn-<%= seat %>')" class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                        <%= seat %> Seater
+                    </button>
+                <% }) %>
+            </div>
+        
+            <!-- Cars Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4" id="cars-container">
+                <% cars.forEach((car) => { %>
+                    <div class="car-card seaters-<%= car.seats %>">
+                        <div style="margin: auto;" class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                             <a href="#">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                                  <%= car.name %>
-                                </h5>
+                                <img class="rounded-t-lg h-48 w-full object-cover" src="<%= car.thumbnail %>" alt="<%= car.name %>" />
                             </a>
-                            <div class="flex items-center justify-between">
-                                <span class="text-2xl font-semibold text-gray-900 dark:text-white">₹<%= car.pricePerDay %></span>
-                                <span class="text-2xl font-semibold text-gray-900 dark:text-white"><%= car.seats %> Seater</span>
-                            </div>
-                            <div class="flex mt-3">
-                                <a href="/car/request/<%= car._id %>"
-                                    class="flex-1 px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Book
-                                    Now</a>
-                                <a href="/car/details/<%= car._id %>"
-                                    class="flex-1 text-center py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Details</a>
+                            <div class="p-5">
+                                <a href="#">
+                                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                                        <%= car.name %>
+                                    </h5>
+                                </a>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-semibold text-gray-900 dark:text-white">₹<%= car.pricePerDay %></span>
+                                    <span class="text-2xl font-semibold text-gray-900 dark:text-white"><%= car.seats %> Seater</span>
+                                </div>
+                                <div class="flex mt-3">
+                                    <a href="/car/request/<%= car._id %>" class="flex-1 px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300">Book Now</a>
+                                    <a href="/car/details/<%= car._id %>" class="flex-1 text-center py-2 px-4 ms-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100">Details</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 <% }) %>
             </div>
         </div>
-
+        <script>
+            function filterBySeats(seatCount, buttonId) {
+                // Filter cars by seats
+                const allCars = document.querySelectorAll('.car-card');
+                allCars.forEach(car => {
+                    car.style.display = seatCount === 'all' || car.classList.contains(`seaters-${seatCount}`) ? 'block' : 'none';
+                });
+        
+                // Highlight the active button
+                const allButtons = document.querySelectorAll('.flex button');
+                allButtons.forEach(button => button.classList.remove('active-btn'));
+        
+                // Add active class to the clicked button
+                document.getElementById(buttonId).classList.add('active-btn');
+            }
+        </script>
+        
 
         <!-- footer -->
         <footer class="bg-gray-900 dark:bg-gray-900 mt-3">
