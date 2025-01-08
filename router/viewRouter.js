@@ -64,7 +64,7 @@ view.get('/car', isAuth, async (req, res) => {
     }
 });
 
-view.get('/contact', isAuth, (req, res) => {
+view.get('/contact-us', isAuth, (req, res) => {
     try {
         res.render('contact', { verified: req.user_verified, profile: req.user_id });
     } catch (err) {
