@@ -1,171 +1,221 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ShareDrive</title>
-	<link rel="icon" href="/images/favicon.png">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-
-  <style>
-    /* Ensure the table is fixed and responsive */
-    .table {
-      table-layout: fixed;
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    /* Fixed column widths */
-    th,
-    td {
-      word-wrap: break-word;
-      overflow: hidden;
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    .rate-column {
-      width: 200px;
-    }
-
-    /* Ensure images do not break layout */
-    td img {
-      height: 100px;
-      width: 150px;
-      object-fit: contain;
-    }
-
-    /* Responsive adjustments for smaller screens */
-    @media (max-width: 768px) {
-      td img {
-        height: 80px;
-        width: 120px;
-      }
-
-      .rate-column {
-        width: 150px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/images/favicon.png">
+    <title>Share Drive - Self-Drive Car Rentals in Mumbai | Affordable Car Rental Services</title>
+    <meta name="description"
+        content="Share Drive offers the best car rental services in Mumbai, including self-drive car rentals, cars with drivers, and flexible rental plans. Rent a car near you today!" />
+    <meta name="keywords"
+        content="car rental Mumbai, Mumbai car rental service, self drive car rental Mumbai, car on rent, car rentals, rental cars for rent, self drive cars in Mumbai, car rent Mumbai, car rental near me, car rental services, car rent, self drive cars, car for rent in Mumbai" />
+    <meta name="author" content="Share Drive">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.share-drive.com/car">
+    <meta property="og:title" content="Share Drive - Self-Drive & Chauffeur Car Rentals in Mumbai">
+    <meta property="og:description"
+        content="Explore self-drive car rentals or hire cars with drivers in Mumbai with Share Drive. Affordable and flexible car rental options to meet your needs." />
+    <meta property="og:url" content="https://www.share-drive.com/car">
+    <meta property="og:image" content="https://www.sharedrive.org.in/uploads/thumb-1735235939481-new%20balenoo.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="https://www.sharedrive.org.in/uploads/thumb-1735235939481-new%20balenoo.jpg">
+    <meta name="twitter:title" content="Share Drive - Car Rentals in Mumbai">
+    <meta name="twitter:description"
+        content="Affordable car rentals in Mumbai! Choose Share Drive for self-drive cars, chauffeur-driven options, and more." />
+    <meta name="twitter:image" content="https://www.sharedrive.org.in/images/banner/banner.png">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Navbar -->
-  <div class="container" style="position: sticky; top: 0px; z-index: 100;">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img src="/images/logo.png" alt="Logo" width="70" height="24" class="d-inline-block align-text-top">
-          <strong style="text-transform: uppercase; font-weight: bold; font-size: 23px;"><span style="color: #000;">Share</span><span style="color: #1871e3;">Drive</span></strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link text-primary fw-semibold" aria-current="page" href="/about">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary fw-semibold" href="/services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-primary fw-semibold" href="/car">Cars</a>
-            </li>
-            <% if(profile){ %>
-              <li class="nav-item">
-                <a class="nav-link text-primary fw-semibold" href="/profile/<%= profile %>">Profile</a>
-              </li>
-            <% } else{%>
-              <li class="nav-item">
-                <a class="nav-link text-primary fw-semibold" href="/login">Login</a>
-              </li>
-            <% } %>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
 
-  <div class="container py-5">
-    <div class="row g-4">
-      <!-- Contact Info -->
-      <div class="col-md-4">
-        <div class="border p-3 rounded mb-3">
-          <h5 class="fw-bold">Address</h5>
-          <p>Subhash Nagar, Chembur, Mumbai- 400071</p>
+        .container {
+            max-width: 1280px;
+            margin: auto;
+        }
+    </style>
+    <div class="max-w-screen-xl mx-auto">
+        <!-- nav bat -->
+        <div>
+            <nav class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-400 dark:border-gray-600"
+                style="z-index: 50;">
+                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <img src="/images/logo.png" class="h-8" alt="ShareDrive">
+                        <span class="self-center text-2xl whitespace-nowrap dark:text-white"
+                            style="font-weight: 900;">SHARE <span style="color: #1a56db;">DRIVE</span></span>
+                    </a>
+                    <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                        <button data-collapse-toggle="navbar-sticky" type="button"
+                            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                            aria-controls="navbar-sticky" aria-expanded="false">
+                            <span class="sr-only">Open main menu</span>
+                            <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 17 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+                        id="navbar-sticky">
+                        <ul
+                            class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                            <li>
+                                <a href="/"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                                    aria-current="page">Home</a>
+                            </li>
+                            <li>
+                                <a href="/about"
+                                    class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500">About</a>
+                            </li>
+                            <li>
+                                <a href="/car"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                    Cars
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/contact-us"
+                                    class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <% if(profile){ %>
+                                <li>
+                                    <a href="/profile/<%= profile %>"
+                                        class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Profile</a>
+                                </li>
+                                <% }else{ %>
+                                    <li>
+                                        <a href="/login"
+                                            class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Login</a>
+                                    </li>
+                                    <% } %>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </div>
-        <div class="border p-3 rounded mb-3">
-          <h5 class="fw-bold">Phone</h5>
-          <p><a href="tel://1234567920" class="text-decoration-none">9004988983</a></p>
+        <div style="margin-top: 80px;"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+            <div style="width: 100%;">
+                <div
+                    class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 20 20">
+                        <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"/>
+                      </svg>
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Phone</h5>
+                    </a>
+                    <a href="tel:9004988983" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+                        9004988983
+                    </a>
+                </div>
+                <div
+                    class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope" viewBox="0 0 20 20">
+                        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                      </svg>
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Email</h5>
+                    </a>
+                    <a href="mailto:sharedrivee1@gmail.com" class="inline-flex font-medium items-center text-blue-600 hover:underline">
+                        sharedrivee1@gmail.com
+                    </a>
+                </div>
+                <div
+                    class="max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 20 20">
+                        <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A32 32 0 0 1 8 14.58a32 32 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10"/>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4m0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+                      </svg>
+                    <a href="#">
+                        <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white">Address</h5>
+                    </a>
+                    <span>
+                        Subhash Nagar, Chembur, Mumbai- 400071
+                    </span>
+                </div>
+            </div>
+            <div style="width: 100%;margin: 5;">
+                <iframe style="width: 100%;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.1092860669014!2d72.90626085!3d19.05893205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c61c1b6055e1%3A0x89ebe1c0c71b6bea!2sSubhash%20Nagar%2C%20Chembur%2C%20Mumbai%2C%20Maharashtra%20400071!5e0!3m2!1sen!2sin!4v1736701242655!5m2!1sen!2sin"  height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </div>
-        <div class="border p-3 rounded">
-          <h5 class="fw-bold">Email</h5>
-          <p><a href="mailto:sharedrivee1@gmail.com" class="text-decoration-none">sharedrivee1@gmail.com</a></p>
-        </div>
-      </div>
-
-      <!-- Contact Form -->
-      <div class="col-md-8">
-        <h1 class="text-center">Contact Form</h1>
-        <form class="bg-light p-4 rounded shadow">
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Your Name">
-          </div>
-          <div class="mb-3">
-            <input type="email" class="form-control" placeholder="Your Email">
-          </div>
-          <div class="mb-3">
-            <input type="text" class="form-control" placeholder="Subject">
-          </div>
-          <div class="mb-3">
-            <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary w-100">Send Message</button>
-        </form>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer Section -->
-  <footer class="bg-dark text-white pt-5 pb-4">
-    <div class="container text-center text-md-start">
-      <div class="row text-center text-md-start">
-        <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">About Us</h5>
-          <p>Sharedrive – Where every journey begins with trust, comfort, and endless possibilities.</p>
-        </div>
-        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Quick Links</h5>
-          <p><a href="#" class="text-white text-decoration-none">Home</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Services</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Portfolio</a></p>
-          <p><a href="#" class="text-white text-decoration-none">Contact</a></p>
-        </div>
-        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
-          <h5 class="text-uppercase mb-4 font-weight-bold text-primary">Contact</h5>
-          <p><i class="fas fa-home mr-3"></i> Subhash Nagar, Chembur, Mumbai- 400071</p>
-          <p><i class="fas fa-envelope mr-3"></i> sharedrivee1@gmail.com</p>
-          <p><i class="fas fa-phone mr-3"></i> 9004988983</p>
-        </div>
-      </div>
-      <hr class="mb-4" />
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-7 col-lg-8">
-          <p>© 2024 Atharv Yadav. All Rights Reserved.
-            <a href="http://localhost:4000/terms-and-conditions" class="text-primary text-decoration-none"><strong>Privacy
-                Policy</strong></a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- footer -->
+        <footer class="bg-gray-900 dark:bg-gray-900 mt-3">
+            <div class="mx-auto w-full max-w-screen-xl">
+                <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">About Us</h2>
+                        <p class="text-white">Sharedrive – Where every journey begins with trust, comfort, and endless
+                            possibilities.</p>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Quick Links</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Home</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/about" class="hover:underline">About</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/car" class="hover:underline">Cars</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="/contact" class="hover:underline">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Contact</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">Subhash Nagar, Chembur, Mumbai- 400071</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">sharedrivee1@gmail.com</a>
+                            </li>
+                            <li class="mb-4">
+                                <a href="#" class="hover:underline">9004988983</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-white uppercase dark:text-white">Legal</h2>
+                        <ul class="text-white dark:text-white font-medium">
+                            <li class="mb-4">
+                                <a href="/terms-and-conditions" class="hover:underline">Terms & Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="px-4 py-6 bg-gray dark:bg-white md:flex md:items-center md:justify-between">
+                    <span class="text-sm text-white dark:text-white sm:text-center">© 2024 <a
+                            href="https://developeraadesh.wordpress.com/">DEVELOPERAADESH™</a>. All Rights Reserved.
+                    </span>
+                    <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+                        <a href="https://www.instagram.com/sharedrive_/profilecard/?igsh=MW9hcnYwczFsOGN2cw%3D%3D"
+                            class="text-white hover:text-white dark:hover:text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
