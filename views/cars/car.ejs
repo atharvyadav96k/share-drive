@@ -117,39 +117,39 @@
         <div class="pt-6 px-2" style="margin-top: 3rem;">
             <!-- Filter Buttons -->
             <div class="bg-white" style="position: sticky; top: 60px">
-                <div class="mb-4">
-                    <h3 class="text-lg font-bold">Filter by Seats</h3>
+                <div class="mb-2">
+                    <h3 class="text-sm font-bold">Filter by Seats</h3>
                     <div class="flex space-x-4">
                         <button id="btn-all-seats" onclick="filterBySeats('all', 'btn-all-seats')"
-                            class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            class="px-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                             All
                         </button>
                         <% const uniqueSeats=[...new Set(cars.map(car=> car.seats))]; %>
                             <% uniqueSeats.forEach(seat=> { %>
                                 <button id="btn-<%= seat %>" onclick="filterBySeats('<%= seat %>', 'btn-<%= seat %>')"
-                                    class="px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                                    class="px-2 py-1 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                                     <%= seat %> Seater
                                 </button>
                                 <% }) %>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <h3 class="text-lg font-bold">Filter by Price</h3>
+                    <h3 class="text-sm font-bold">Filter by Price</h3>
                     <div class="">
                         <button id="btn-all-price" onclick="filterByPrice('all', 'btn-all-price')"
-                            class="mt-1 px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            class="mt-1 px-2 py-1 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                             All
                         </button>
                         <button id="btn-low" onclick="filterByPrice('low', 'btn-low')"
-                            class="mt-1 px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            class="mt-1 px-2 py-1 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                             ₹0 - ₹2000
                         </button>
                         <button id="btn-medium" onclick="filterByPrice('medium', 'btn-medium')"
-                            class="mt-1 px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            class="mt-1 px-2 py-1 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                             ₹2001 - ₹5000
                         </button>
                         <button id="btn-high" onclick="filterByPrice('high', 'btn-high')"
-                            class="mt-1 px-4 py-2 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
+                            class="mt-1 px-2 py-1 bg-gray-200 text-gray-900 rounded hover:bg-blue-700 hover:text-white">
                             ₹5000+
                         </button>
                     </div>
