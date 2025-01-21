@@ -3,69 +3,37 @@ const Request = require('../modules/requestCarSchema');
 const User = require('../modules/userSchema');
 const { requestEmail } = require('../utils/email');
 const fs = require('fs')
-const { v4: uuidv4 } = require('uuid');
 const path = require('path');
-const stream = require('stream');
-const { S3Client, PutObjectCommand, GetObjectCommand } = require("@aws-sdk/client-s3");
-const { getSignedUrl } = require("@aws-sdk/s3-request-presigner");
 const sharp = require('sharp');
-
-const bucketName = process.env.AWS_BUCKET_NAME;
-const bucketRegion = process.env.AWS_BUCKET_REGION;
-const accessKey = process.env.AWS_ACCESS_KEY;
-const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY;
-
-const s3 = new S3Client({
-    credentials: {
-        accessKeyId: accessKey,
-        secretAccessKey: secretAccessKey
-    },
-    region: bucketRegion
-})
+const { v4: uuidv4 } = require('uuid');
+const { getStorage } = require("firebase-admin/storage");
+const { initializeApp, cert } = require("firebase-admin/app");
 
 const ensureDirectoryExists = (dirPath) => {
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath, { recursive: true });
     }
 };
-// saving image to cloud bucket
-async function saveImageToBucket(file, resizedImage) {
-    try {
-        const uniqueName = `${uuidv4()}`;
-        const params = {
-            Bucket: bucketName,
-            Key: uniqueName,
-            Body: resizedImage,
-            ContentType: file.mimetype,
-        }
-        const command = new PutObjectCommand(params);
-        await s3.send(command)
-        console.log(process.env.DOMAIN);
-        const imageUrl = `/car/preview/${uniqueName}`;
-        return imageUrl;
-    } catch (error) {
-        console.log(err)
-        throw new Error('Failed to save image locally: ' + error.message);
-    }
-}
+// Initialize Firebase Admin SDK
+initializeApp({
+    credential: cert(require("../config/farmfresh-india-firebase-adminsdk-1et32-6074048d99.json")),
+    storageBucket: "farmfresh-india.appspot.com", // Replace with your Firebase project's storage bucket
+});
+const uploadToFirebase = async (buffer, fileName, folder) => {
+    const bucket = getStorage().bucket();
 
-// sending thumbnail to client
-exports.getPreviewImage = async (req, res) => {
-    const { key } = req.params;
-    try {
-        const getObjectParams = {
-            Bucket: bucketName,
-            Key: key
-        }
-        const command = new GetObjectCommand(getObjectParams);
-        const url = await getSignedUrl(s3, command, { expiresIn: 30 });
-        res.redirect(url);
-    } catch (err) {
-        console.log(err)
-        res.status(500).send('Failed to fetch image' + err.message);
-    }
-}
-
+    // Generate a unique name using UUID or a timestamp
+    const uniqueName = `${Date.now()}-${uuidv4()}-${fileName}`;
+    const filePath = `${folder}/${uniqueName}`;
+    const file = bucket.file(filePath);
+    await file.save(buffer, {
+        metadata: {
+            contentType: "image/jpeg", // Adjust based on your file type
+        },
+        public: true,
+    });
+    return `https://storage.googleapis.com/${bucket.name}/${filePath}`;
+};
 // adding  new car
 exports.storeCarDetails = async (req, res) => {
     try {
@@ -91,9 +59,15 @@ exports.storeCarDetails = async (req, res) => {
         } = req.body;
 
         const imageBuffer = req.file.buffer;
-        const thumbnailBuffer = await reduceImageSize(imageBuffer);
+        const thumbnailBuffer = await reduceImageSize(imageBuffer); // Assuming reduceImageSize exists
 
-        // const storeImage = await saveImageToBucket(req.file, thumbnailBuffer);
+        const imageFileName = `image-${Date.now()}-${req.file.originalname}`;
+        const thumbnailFileName = `thumb-${Date.now()}-${req.file.originalname}`;
+
+        // Upload to Firebase
+        const imageUrl = await uploadToFirebase(imageBuffer, imageFileName, "cars/images");
+        const thumbnailUrl = await uploadToFirebase(thumbnailBuffer, thumbnailFileName, "cars/thumbnails");
+
         const car = new Car({
             name,
             mileage,
@@ -102,52 +76,28 @@ exports.storeCarDetails = async (req, res) => {
             fuel,
             pricePerDay,
             features: {
-                airConditioning: airConditioning === 'on',
-                frontSensors: frontSensors === 'on',
-                backCamera: backCamera === 'on',
-                luggage: luggage === 'on',
-                music: music === 'on',
-                seatBelt: seatBelt === 'on',
-                bluetooth: bluetooth === 'on',
-                audioInput: audioInput === 'on',
-                longTermTrips: longTermTrips === 'on',
-                carKit: carKit === 'on',
-                remoteCentralLocking: remoteCentralLocking === 'on',
-                climateControl: climateControl === 'on',
+                airConditioning: airConditioning === "on",
+                frontSensors: frontSensors === "on",
+                backCamera: backCamera === "on",
+                luggage: luggage === "on",
+                music: music === "on",
+                seatBelt: seatBelt === "on",
+                bluetooth: bluetooth === "on",
+                audioInput: audioInput === "on",
+                longTermTrips: longTermTrips === "on",
+                carKit: carKit === "on",
+                remoteCentralLocking: remoteCentralLocking === "on",
+                climateControl: climateControl === "on",
             },
+            image: imageUrl,
+            thumbnail: thumbnailUrl,
         });
-
-        if (req.file) {
-            // Ensure uploads directory exists
-            const uploadDir = path.join(__dirname, '../public/uploads');
-            ensureDirectoryExists(uploadDir);
-
-            // Define file paths for image and thumbnail
-            const imageName = `image-${Date.now()}-${req.file.originalname}`;
-            const imagePath = path.join(uploadDir, imageName);
-
-            const thumbnailName = `thumb-${Date.now()}-${req.file.originalname}`;
-            const thumbnailPath = path.join(uploadDir, thumbnailName);
-
-            // Save original image
-            fs.writeFileSync(imagePath, req.file.buffer);
-
-            // Create and save thumbnail
-            const thumbnailBuffer = await reduceImageSize(req.file.buffer);
-            fs.writeFileSync(thumbnailPath, thumbnailBuffer);
-
-            // Update car with file paths
-            car.image = `/uploads/${imageName}`;
-            car.thumbnail = `/uploads/${thumbnailName}`;
-            car.path = `/uploads/${thumbnailName}`
-        }
 
         await car.save();
         res.redirect(`/admin/cars`);
     } catch (error) {
-        console.log(err)
         console.error(error);
-        res.status(500).json('Failed to save car details.' + error);
+        res.status(500).json("Failed to save car details. " + error.message);
     }
 };
 
@@ -380,7 +330,7 @@ exports.acceptCar = async (req, res) => {
         return res.status(500).send("Error :" + err.message);
     }
 }
-
+// pending car
 exports.pendingCarRequest = async (req, res) => {
     const { id } = req.params;
     try {

@@ -42,7 +42,6 @@ app.use('/api/v1', apiRouter);
 app.use('/car', carRouter);
 app.use('/explore', blogRouter);
 
-
 app.listen(process.env.PORT, () => {
   console.log('App is running on port server : ', process.env.PORT);
 })
