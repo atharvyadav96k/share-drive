@@ -17,7 +17,7 @@ const ensureDirectoryExists = (dirPath) => {
 // Initialize Firebase Admin SDK
 initializeApp({
     credential: cert(require("../config/farmfresh-india-firebase-adminsdk-1et32-6074048d99.json")),
-    storageBucket: "farmfresh-india.appspot.com", // Replace with your Firebase project's storage bucket
+    storageBucket: process.env.storageBucket, // Replace with your Firebase project's storage bucket
 });
 const uploadToFirebase = async (buffer, fileName, folder) => {
     const bucket = getStorage().bucket();
