@@ -1,7 +1,6 @@
 const express = require('express');
 const { initializeApp } = require('firebase/app');
 const path = require('path')
-const cluster = require('cluster');
 const os = require('os')
 const { getAnalytics, isSupported } = require('firebase/analytics');
 const connectDb = require('./db/connectDb');
@@ -15,8 +14,6 @@ const blogRouter = require('./router/blogRouter');
 const cookieParser = require('cookie-parser');
 
 
-
-const numCPUs  = os.cpus().length;
 
 const app = express();
 connectDb();
@@ -46,20 +43,6 @@ app.use('/car', carRouter);
 app.use('/explore', blogRouter);
 
 
-if (cluster.isPrimary) {
-  console.log(`Primary ${process.pid} is running`);
-
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork();
-  }
-
-  cluster.on('exit', (worker, code, signal) => {
-    console.log(`worker ${worker.process.pid} died`);
-  });
-} else {
-  app.listen(process.env.PORT, () => {
-    console.log('App is running on port server : ', process.env.PORT);
-  })
-  console.log(`Worker ${process.pid} started`);
-}
-
+app.listen(process.env.PORT, () => {
+  console.log('App is running on port server : ', process.env.PORT);
+})
